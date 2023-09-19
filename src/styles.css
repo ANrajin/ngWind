@@ -1,3 +1,68 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer components {
+    * {
+        font-family: 'Inter', sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* Text color */
+    .text-light {
+        @apply text-slate-400
+    }
+
+    /* Text size */
+    .text-2xs {
+        font-size: 0.5rem !important;
+    }
+
+    /* Button */
+    .btn {
+        @apply px-2 py-2 h-11 flex justify-center items-center rounded-md transition ease-in-out duration-300
+    }
+
+    .btn:disabled {
+        @apply bg-emerald-500
+    }
+
+    .btn-primary {
+        @apply bg-emerald-600 text-white
+    }
+
+    .btn-primary:hover {
+        @apply bg-emerald-500
+    }
+
+    .btn-primary:focus {
+        @apply outline-none ring-2 bg-emerald-600 ring-offset-1
+    }
+
+    /* Card */
+    .card {
+        @apply py-2 px-4 mb-4 h-full bg-white rounded-xl shadow-md shadow-gray-200
+    }
+
+    .card-title {
+        @apply text-gray-900
+    }
+
+    /* Input */
+    input {
+        outline: none !important;
+        @apply h-10 transition-all duration-100 ease-in-out focus:ring-2 focus:ring-inset focus:ring-emerald-600
+    }
+
+    .form-group {
+        @apply flex flex-col gap-y-1 mb-3
+    }
+
+    .form-control {
+        @apply py-2 px-3 text-sm rounded-lg border border-gray-100
+    }
+}

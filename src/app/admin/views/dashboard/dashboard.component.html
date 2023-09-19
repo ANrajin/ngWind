@@ -1,0 +1,179 @@
+<div [@pageTransition]>
+    <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+        <div class="card flex items-center gap-3">
+            <div class="bg-gradient-to-br from-emerald-500 to-emerald-700 py-2 px-3 rounded-lg text-white">
+                <span class="bi bi-calendar-event text-3xl"></span>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold">25</h4>
+                <p class="text-md text-gray-400">Total Events</p>
+            </div>
+        </div>
+        <div class="card flex items-center gap-3">
+            <div class="bg-gradient-to-br from-orange-500 to-orange-700 py-2 px-3 rounded-lg text-white">
+                <span class="bi bi-ticket-perforated text-3xl"></span>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold">2560+</h4>
+                <p class="text-md text-gray-400">Total Ticket Sold</p>
+            </div>
+        </div>
+        <div class="card flex items-center gap-3">
+            <div class="bg-gradient-to-br from-violet-500 to-violet-700 py-2 px-3 rounded-lg text-white">
+                <span class="bi bi-people-fill text-3xl"></span>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold">5000+</h4>
+                <p class="text-md text-gray-400">Total Registration</p>
+            </div>
+        </div>
+        <div class="card flex items-center gap-3">
+            <div class="bg-gradient-to-br from-cyan-500 to-cyan-700 py-2 px-3 rounded-lg text-white">
+                <span class="bi bi-cash-stack text-3xl"></span>
+            </div>
+            <div>
+                <h4 class="text-xl font-bold">$8000</h4>
+                <p class="text-md text-gray-400">Total Revenue</p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="my-5"></div>
+    
+    <section class="grid grid-cols-1 my-4 xl:grid-cols-2 gap-5">
+        <div class="card p-8">
+            <div class="card-title flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold leading-none">Area Wise Sale</h3>
+            </div>
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-5">
+                <div class="">
+                    <canvas id="areaWiseSale"></canvas>
+                </div>
+                <div class="xl:grid-cols-2">
+                    Chart Data
+                </div>
+            </div>
+        </div>
+        <div class="card p-8 bg-emerald-600 text-gray-50">
+            <h3 class="text-2xl">
+                Ticket Sold Today
+            </h3>
+            <h2 class="my-5">
+                <span class="text-4xl font-bold">
+                    278
+                </span> piece
+            </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque molestiae incidunt officiis veritatis,
+                architecto nam soluta, exercitationem minima laudantium harum qui.
+            </p>
+            <div class="my-5"></div>
+            <a href="" class="">
+                View Details
+                <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+    
+    <div class="my-5"></div>
+    
+    <section class="grid grid-cols-1 my-4 xl:grid-cols-2 2xl:grid-cols-3 gap-5">
+        <div class="card p-8">
+            <div class="card-title flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold leading-none">Latest Customers</h3>
+                <a href="#" class="inline-flex items-center p-2 text-sm font-medium rounded-lg hover:bg-gray-100">
+                    View all
+                </a>
+            </div>
+            <div class="flow-root">
+                <ul role="list" class="divide-y divide-gray-200">
+                    <li class="py-3 sm:py-4" *ngFor="let i of [200, 325, 100, 50, 400, 336]">
+                        <div class="flex items-center space-x-4">
+                            <div class="flex-shrink-0">
+                                <img class="w-8 h-8 rounded-full" src="https://placehold.co/100x100" alt="user image">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <p class="text-sm font-medium text-gray-900 truncate">
+                                    John Doe
+                                </p>
+                                <p class="text-sm text-gray-500 truncate">
+                                    john.deo@email.com
+                                </p>
+                            </div>
+                            <div class="inline-flex items-center text-base font-semibold text-gray-900">
+                                ${{i}}
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+    
+                <div class="flex justify-between font-medium text-sm pt-5">
+                    <div class="text-gray-400">
+                        <h5 class="inline-flex">Total</h5>
+                        6 of 300
+                    </div>
+                    <a href="" class="inline-flex text-emerald-500">
+                        View Sales Report
+                    </a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="card p-8 2xl:col-span-2">
+            <div class="card-title flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold leading-none">Upcoming Events</h3>
+            </div>
+            <div class="overflow-y-auto overflow-x-hidden pr-4" style="max-height: 500px;">
+                <div class="block md:flex md:items-center gap-6 py-3 my-3 border-b" *ngFor="let i of [1, 2, 3, 4, 5, 6]">
+                    <div class="hidden relative lg:block">
+                        <img src="https://placehold.co/600x400" alt="event image" class="w-48 rounded-lg">
+                        <span
+                            class="bi bi-calendar2-event absolute bottom-0 right-0 w-10 h-7 bg-emerald-500 text-center border rounded-tl-lg rounded-br-lg text-white"></span>
+                    </div>
+                    <div class="flex-1 my-3">
+                        <h4 class="text-lg font-semibold leading-none">
+                            Envato International Online Meetup 2020
+                        </h4>
+                        <p class="my-1 text-emerald-500">California, USA</p>
+                        <p class="text-xs text-justify">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint ipsa vero illum quos vitae
+                            dolorum, earum
+                            recusandae est modi ea possimus nihil aspernatur
+                            libero unde itaque error quis, sit tenetur esse quam harum corrupti! Quia, tenetur provident,
+                            vero, recusandae
+                            aliquam possimus at mollitia quo perspiciatis
+                            adipisci in? Odio, impedit cumque.
+                        </p>
+                    </div>
+                    <div class="w-80 flex justify-between">
+                        <div class="text-center text-emerald-600">
+                            <div
+                                class="flex items-center justify-center bg-emerald-50 rounded-full shadow-sm shadow-gray-200 w-12 h-12 xl:w-16 xl:h-16">
+                                <i class="bi bi-cash text-2xl block"></i>
+                            </div>
+                            <p class="text-sm mt-3">$200</p>
+                        </div>
+                        <div class="text-center text-emerald-600">
+                            <div
+                                class="flex items-center justify-center bg-gray-50 rounded-full shadow-sm shadow-gray-200 w-12 h-12 xl:w-16 xl:h-16">
+                                <i class="bi-ticket-perforated text-2xl block"></i>
+                            </div>
+                            <p class="text-sm mt-3">150 pcs left</p>
+                        </div>
+                        <div class="text-center text-emerald-600">
+                            <div
+                                class="flex items-center justify-center bg-emerald-50 rounded-full shadow-sm shadow-gray-200 w-12 h-12 xl:w-16 xl:h-16">
+                                <i class="bi bi-calendar2-check text-2xl block"></i>
+                            </div>
+                            <p class="text-sm mt-3">{{eventDate}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <i class="bi bi-arrow-clockwise"></i>
+                    loading...
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

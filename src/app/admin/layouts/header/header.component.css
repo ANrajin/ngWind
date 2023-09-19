@@ -1,0 +1,7 @@
+.profile-dropdown-list{
+    @apply absolute top-9 -right-3 mt-2 flex w-60 flex-col gap-3 rounded-xl bg-slate-100 border border-slate-500/30 p-4 shadow-lg transition ease-in-out duration-150
+}
+
+.profile-dropdown-list[aria-expanded=false]{
+    @apply invisible scale-90 opacity-0
+}

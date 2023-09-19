@@ -1,0 +1,10 @@
+<div class="flex w-full items-start font-sans bg-slate-100">
+  <app-sidebar class="sidebar" aria-expanded="true" (sidebarCollapsed)="onSidebarCollapsed($event)"></app-sidebar>
+
+  <div class="flex-1">
+    <app-header></app-header>
+    <main class="min-h-screen p-8">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

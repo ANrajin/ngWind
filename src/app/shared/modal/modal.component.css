@@ -1,0 +1,35 @@
+.modal {
+    @apply relative z-10
+}
+
+.modal[aria-modal=false]{
+    @apply invisible ease-in duration-500 opacity-0
+}
+
+.modal[aria-modal=true] {
+    @apply visible ease-out duration-300 opacity-100
+}
+
+.modal-backdrop {
+    @apply fixed inset-0 bg-slate-900 bg-opacity-75 transition-opacity
+}
+
+.modal-wrapper {
+    @apply fixed inset-0 z-10 w-screen overflow-y-auto
+}
+
+.modal-container {
+    @apply flex min-h-full items-center justify-center p-4 text-center
+}
+
+.modal-box {
+    @apply relative transform overflow-hidden rounded-xl bg-white text-left shadow-xl transition-all sm:my-8
+}
+
+.modal[aria-modal=true] .modal-box{
+    @apply ease-out duration-300 opacity-100 translate-y-0 sm:scale-100
+}
+
+.modal[aria-modal=false] .modal-box{
+    @apply ease-in duration-200 opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95
+}
