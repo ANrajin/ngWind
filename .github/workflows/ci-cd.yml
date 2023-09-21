@@ -1,0 +1,42 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main # Change this to the branch you want to trigger the workflow on
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # You can choose a different runner based on your needs
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14" # Choose your desired Node.js version
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and Test
+        run: |
+          npm run build
+          npm test
+
+      - name: Deploy
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          project_id: my-project-id
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          region: us-central1
+          run: |
+            gcloud app deploy
+        env:
+          project_id: my-project-id
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          region: us-central1
+          run: |
+            gcloud app deploy
