@@ -1,8 +1,10 @@
 <aside>
     <div class="brand-wrapper">
-        <a href="#" class="brand">
-            <img src="../assets/my-logo.png" alt="event bud" class="w-5">
-            <h1 class="text-xl font-bold text-slate-300">EVENTBUD</h1>
+        <a href="#" class="brand text-center">
+            <h1 class="flex items-center font-bold text-slate-300">
+                <span class="logo">H</span>
+                <span class="brand-name">HYLOS</span>
+            </h1>
         </a>
         <button type="button" class="bg-slate-700 px-1 rounded hover:text-emerald-600 transition ease-in-out"
             (click)="sidebarCollapsedHandler()">
@@ -52,6 +54,29 @@
                 <li>
                     <a href="#" class="menu-item" ariaCurrentWhenActive="page">
                         <span>Website</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="javascript:void(0)" class="menu-item sub-menu" aria-expanded="false"
+                (click)="subMenuToggleHandler($event)">
+                <i class="bi bi-shield-check"></i>
+                <span>Authentication</span>
+            </a>
+            <ul class="sub-menu-item">
+                <li>
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(publicRoutes.Signin)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Sign in</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(publicRoutes.Signup)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Sign up</span>
                     </a>
                 </li>
             </ul>
