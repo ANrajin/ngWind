@@ -1,0 +1,15 @@
+.alert {
+  @apply mt-5 p-2 rounded text-sm font-medium relative transition-all ease-in-out duration-300 overflow-hidden
+}
+
+.alert-success {
+  @apply border border-green-100 bg-green-100 text-green-600
+}
+
+.alert-danger {
+  @apply border border-red-100 bg-red-100 text-red-600
+}
+
+.alert-dismiss {
+  @apply absolute top-1/2 translate-x-[-50%] translate-y-[-50%] right-0 cursor-pointer;
+}

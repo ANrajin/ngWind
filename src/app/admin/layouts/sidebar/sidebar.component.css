@@ -19,14 +19,6 @@
     @apply flex items-center gap-x-2 transition-all duration-300
 }
 
-.brand .logo{
-    @apply text-2xl px-2 bg-emerald-600 rounded mr-2;
-}
-
-.brand .brand-name{
-    @apply text-3xl tracking-wider;
-}
-
 app-sidebar[aria-expanded="false"] .brand-wrapper {
     @apply justify-evenly
 }

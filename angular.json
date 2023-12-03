@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "hylos": {
+    "event-bud-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/hylos",
+            "outputPath": "dist/event-bud-frontend",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,7 +25,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "./node_modules/notyf/notyf.min.css"
             ],
             "scripts": []
           },
@@ -51,19 +52,25 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "hylos:build:production"
+              "browserTarget": "event-bud-frontend:build:production"
             },
             "development": {
-              "browserTarget": "hylos:build:development"
+              "browserTarget": "event-bud-frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -71,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hylos:build"
+            "browserTarget": "event-bud-frontend:build"
           }
         },
         "test": {
@@ -94,5 +101,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "d667393a-d259-4014-a102-9abf03f1d4c0"
   }
 }

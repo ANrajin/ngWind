@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { pageTransition } from 'src/app/shared/animations';
-import { ModalComponent } from 'src/app/shared/modal/modal.component';
+import { pageTransition } from 'src/app/shared/utils/animations';
+import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-elements',
