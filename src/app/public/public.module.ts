@@ -1,25 +1,22 @@
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
-import { SpinnerComponent } from "../shared/spinner/spinner.component";
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { PublicRoutingModule } from './public-routing.module';
-import { PublicComponent } from './public.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
-
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {PublicRoutingModule} from './public-routing.module';
+import {PublicComponent} from './public.component';
+import {HomeComponent} from './home/home.component';
+import {AuthModule} from "./auth/auth.module";
 
 
 @NgModule({
     declarations: [
         PublicComponent,
         PageNotFoundComponent,
-        SigninComponent,
-        SignupComponent
+        HomeComponent,
     ],
     imports: [
         CommonModule,
         PublicRoutingModule,
-        SpinnerComponent
+        AuthModule
     ]
 })
 export class PublicModule { }

@@ -13,40 +13,43 @@
     </div>
     <ul class="menu-links">
         <li>
-            <a [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Dashboard)" routerLinkActive="active" class="menu-item"
-                ariaCurrentWhenActive="page">
+            <a [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Dashboard)"
+                routerLinkActive="active" class="menu-item" ariaCurrentWhenActive="page">
                 <i class="bi bi-columns-gap"></i>
                 <span>Dashboard</span>
             </a>
         </li>
         <li>
-            <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Events)" 
+            <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Events)"
                 routerLinkActive="active" ariaCurrentWhenActive="page">
                 <i class="bi bi-calendar4-event"></i>
                 <span>Events</span>
             </a>
         </li>
         <li>
-            <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements)" 
+            <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements)"
                 routerLinkActive="active" ariaCurrentWhenActive="page">
                 <i class="bi bi-diagram-3"></i>
                 <span>UI Elements</span>
             </a>
         </li>
         <li>
-            <a href="javascript:void(0)" class="menu-item sub-menu" aria-expanded="false" (click)="subMenuToggleHandler($event)">
+            <a href="javascript:void(0)" class="menu-item sub-menu" aria-expanded="false"
+                (click)="subMenuToggleHandler($event)">
                 <i class="bi bi-sliders2-vertical"></i>
                 <span>Settings</span>
             </a>
             <ul class="sub-menu-item">
                 <li>
-                    <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Settings, settingRoutes.Profile)" 
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Settings, settingRoutes.Profile)"
                         routerLinkActive="active" ariaCurrentWhenActive="page">
                         <span>Profile</span>
                     </a>
                 </li>
                 <li>
-                    <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Settings, settingRoutes.Users)" 
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Settings, settingRoutes.Users)"
                         routerLinkActive="active" ariaCurrentWhenActive="page">
                         <span>Users</span>
                     </a>
@@ -54,29 +57,6 @@
                 <li>
                     <a href="#" class="menu-item" ariaCurrentWhenActive="page">
                         <span>Website</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href="javascript:void(0)" class="menu-item sub-menu" aria-expanded="false"
-                (click)="subMenuToggleHandler($event)">
-                <i class="bi bi-shield-check"></i>
-                <span>Authentication</span>
-            </a>
-            <ul class="sub-menu-item">
-                <li>
-                    <a class="menu-item"
-                        [routerLink]="commonServices.prepareRoute(publicRoutes.Signin)"
-                        routerLinkActive="active" ariaCurrentWhenActive="page">
-                        <span>Sign in</span>
-                    </a>
-                </li>
-                <li>
-                    <a class="menu-item"
-                        [routerLink]="commonServices.prepareRoute(publicRoutes.Signup)"
-                        routerLinkActive="active" ariaCurrentWhenActive="page">
-                        <span>Sign up</span>
                     </a>
                 </li>
             </ul>

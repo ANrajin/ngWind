@@ -12,7 +12,6 @@ import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CommonService } from 'src/app/_core/services/common.service';
 import { AppRoutes } from 'src/app/app.routes';
-import { PublicRoutes } from 'src/app/public/public.routes';
 import { AdminRoutes, SettingRoutes } from '../../admin.routes';
 
 @Component({
@@ -27,7 +26,6 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
   readonly appRoutes = AppRoutes;
   readonly adminRoutes = AdminRoutes;
   readonly settingRoutes = SettingRoutes;
-  readonly publicRoutes = PublicRoutes;
   private routerSubscription: Subscription = new Subscription();
 
   @Output() sidebarCollapsed = new EventEmitter<boolean>();
