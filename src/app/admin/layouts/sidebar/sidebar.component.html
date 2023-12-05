@@ -27,11 +27,27 @@
             </a>
         </li>
         <li>
-            <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements)"
-                routerLinkActive="active" ariaCurrentWhenActive="page">
+            <a href="javascript:void(0)" class="menu-item sub-menu" aria-expanded="false"
+                (click)="subMenuToggleHandler($event)">
                 <i class="bi bi-diagram-3"></i>
                 <span>UI Elements</span>
             </a>
+            <ul class="sub-menu-item">
+                <li>
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Alert)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Alert</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Modal)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Modal</span>
+                    </a>
+                </li>
+            </ul>
         </li>
         <li>
             <a href="javascript:void(0)" class="menu-item sub-menu" aria-expanded="false"
