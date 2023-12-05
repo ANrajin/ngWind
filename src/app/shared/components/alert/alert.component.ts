@@ -1,7 +1,7 @@
-import {Component, ElementRef, EventEmitter, Input, Output, ViewChild} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {slideDown} from "../../utils/animations";
-import {AlertType} from "./alert.type";
+import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { slideDown } from "../../utils/animations";
+import { AlertType } from "./alert.type";
 
 @Component({
   selector: 'app-alert',
@@ -19,7 +19,7 @@ export class AlertComponent {
 
   @Output() hideAlert = new EventEmitter<boolean>();
 
-  @ViewChild("alertElement", {static: false}) alertElement!: ElementRef;
+  @ViewChild("alertElement", { static: false }) alertElement!: ElementRef;
 
   constructor(private elementRef: ElementRef) {
   }
@@ -38,7 +38,7 @@ export class AlertComponent {
         elemClass = "alert-info";
         break;
       default:
-        elemClass = "alert-danger";
+        elemClass = "alert-warning";
     }
 
     return elemClass;
