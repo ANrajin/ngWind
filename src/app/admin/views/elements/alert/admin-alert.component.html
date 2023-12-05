@@ -57,4 +57,45 @@
                 quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?</p>
         </app-alert>
     </div>
+
+    <div class="card p-5">
+        <div class="card-title">
+            <h3 class="text-xl font-bold leading-none">Alerts With Icons</h3>
+        </div>
+        <app-alert [show]="true" [dismissible]="true">
+            <p>
+                <i class="bi bi-check2-circle"></i>&nbsp;
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
+            </p>
+        </app-alert>
+
+        <app-alert [show]="true" [dismissible]="true" [type]="alertType.Danger">
+            <p>
+                <i class="bi bi-bug"></i>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
+            </p>
+        </app-alert>
+
+        <app-alert [show]="true" [dismissible]="true" [type]="alertType.Info">
+            <p>
+                <i class="bi bi-exclamation-circle"></i>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
+            </p>
+        </app-alert>
+
+        <app-alert [show]="true" [dismissible]="true" [type]="alertType.Warning">
+            <p>
+                <i class="bi bi-exclamation-triangle"></i>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
+            </p>
+        </app-alert>
+    </div>
 </div>
