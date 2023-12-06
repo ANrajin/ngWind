@@ -63,8 +63,11 @@
             <h3 class="text-xl font-bold leading-none">Alerts With Icons</h3>
         </div>
         <app-alert [show]="true" [dismissible]="true">
+            <h6 class="text-lg font-semibold">
+                <i class="bi bi-check2-circle"></i>
+                Success
+            </h6>
             <p>
-                <i class="bi bi-check2-circle"></i>&nbsp;
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
                 blanditiis
                 quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
@@ -72,8 +75,11 @@
         </app-alert>
 
         <app-alert [show]="true" [dismissible]="true" [type]="alertType.Danger">
-            <p>
+            <h6 class="text-lg font-semibold">
                 <i class="bi bi-bug"></i>
+                Danger
+            </h6>
+            <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
                 blanditiis
                 quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
@@ -81,8 +87,11 @@
         </app-alert>
 
         <app-alert [show]="true" [dismissible]="true" [type]="alertType.Info">
-            <p>
+            <h6 class="text-lg font-semibold">
                 <i class="bi bi-exclamation-circle"></i>
+                Info
+            </h6>
+            <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
                 blanditiis
                 quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
@@ -90,8 +99,11 @@
         </app-alert>
 
         <app-alert [show]="true" [dismissible]="true" [type]="alertType.Warning">
-            <p>
+            <h6 class="text-lg font-semibold">
                 <i class="bi bi-exclamation-triangle"></i>
+                Warning
+            </h6>
+            <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
                 blanditiis
                 quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
