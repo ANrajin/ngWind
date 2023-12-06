@@ -1,13 +1,13 @@
-import {Component} from '@angular/core';
-import {DatetimeHelper} from 'src/app/_core/helpers/datetime.helper';
-import {CommonService} from 'src/app/_core/services/common.service';
-import {pageTransition} from 'src/app/shared/utils/animations';
-import {PublicRoutes} from '../../public.routes';
-import {FormBuilder, Validators} from "@angular/forms";
-import {Signin} from './signin.model';
-import {LocalStorageService} from "../../../shared/services/localStorage.service";
-import {AuthService} from "../auth.service";
-import {AlertType} from "../../../shared/components/alert/alert.type";
+import { Component } from '@angular/core';
+import { DatetimeHelper } from 'src/app/_core/helpers/datetime.helper';
+import { CommonService } from 'src/app/_core/services/common.service';
+import { pageTransition } from 'src/app/shared/utils/animations';
+import { PublicRoutes } from '../../public.routes';
+import { FormBuilder } from "@angular/forms";
+import { AlertType } from "../../../shared/components/alert/alert.type";
+import { Router } from '@angular/router';
+import { AppRoutes } from 'src/app/app.routes';
+import { AdminRoutes } from 'src/app/admin/admin.routes';
 
 @Component({
   selector: 'app-signin',
@@ -23,46 +23,25 @@ export class SigninComponent {
   serverErrors: string[] = [];
 
   signInForm = this.formBuilder.group({
-    username: ['', Validators.required],
-    password: ['', Validators.required]
+    username: [''],
+    password: ['']
   });
 
   constructor(
     public commonService: CommonService,
     private formBuilder: FormBuilder,
-    private authService: AuthService,
-    private localStorage: LocalStorageService) {
+    private router: Router) {
   }
   protected readonly AlertType = AlertType;
 
   protected onFormSubmitHandler = (event: SubmitEvent) => {
     event.preventDefault();
-
-    if (this.signInForm.invalid) return;
-
     this.isLoading = true;
 
-    const formData: Signin = {
-      username: this.signInForm.get('username')?.value!,
-      password: this.signInForm.get('password')?.value!
-    };
-
-    this.authService.signIn(formData).subscribe({
-      next: (res) => {
-        this.localStorage.put("token", res.token);
-      },
-      error: (err: Signin) => {
-        this.isLoading = false;
-        this.serverErrors = [];
-        for (const key in err) {
-          this.serverErrors.push(err[key as keyof Signin]);
-        }
-      },
-      complete: () => {
-        window.location.href = "/admin/dashboard";
-        this.isLoading = false;
-      },
-    });
+    setTimeout(() => {
+      this.isLoading = false;
+      this.router.navigate([AppRoutes.Admin, AdminRoutes.Dashboard]);
+    }, 3000);
   }
 
   protected onAlertCloseHandler = (e: any) => {

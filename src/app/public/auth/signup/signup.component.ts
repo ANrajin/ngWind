@@ -3,6 +3,9 @@ import { DatetimeHelper } from 'src/app/_core/helpers/datetime.helper';
 import { CommonService } from 'src/app/_core/services/common.service';
 import { pageTransition } from 'src/app/shared/utils/animations';
 import { PublicRoutes } from '../../public.routes';
+import { Router } from '@angular/router';
+import { AppRoutes } from 'src/app/app.routes';
+import { AdminRoutes } from 'src/app/admin/admin.routes';
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +18,10 @@ export class SignupComponent {
   readonly currentYear: number = DatetimeHelper.currentYear;
   readonly publicRoutes = PublicRoutes;
 
-  constructor(public commonService: CommonService) { }
+  constructor(
+    public commonService: CommonService,
+    private router: Router
+  ) { }
 
   onFormSubmitHandler = (event: SubmitEvent) => {
     event.preventDefault();
@@ -24,6 +30,7 @@ export class SignupComponent {
 
     setTimeout(() => {
       this.isLoading = false;
-    }, 5000);
+      this.router.navigate([AppRoutes.Admin, AdminRoutes.Dashboard]);
+    }, 3000);
   }
 }
