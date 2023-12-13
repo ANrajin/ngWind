@@ -1,4 +1,4 @@
-<div [@pageTransition] class="min-h-screen bg-slate-50 flex justify-center items-center">
+<div [@pageTransition] class="min-h-screen bg-slate-50 flex justify-center items-center ">
     <div class="card p-5 w-10/12 xl:w-1/2 grid grid-cols-1 md:grid-cols-2">
         <div class="relative flex flex-col p-1 md:p-8">
             <h2 class="text-lg xl:text-2xl pb-3">
@@ -24,8 +24,8 @@
                 </div>
             </div>
 
-          <app-alert (hideAlert)="onAlertCloseHandler($event)" [dismissible]="true" [messages]="serverErrors"
-                     [show]="serverErrors.length > 0" [type]="AlertType.Danger"></app-alert>
+            <app-alert (hideAlert)="onAlertCloseHandler($event)" [dismissible]="true" [messages]="serverErrors"
+                [show]="serverErrors.length > 0" [type]="AlertType.Danger"></app-alert>
 
             <form class="my-5" [formGroup]="signInForm" (ngSubmit)="onFormSubmitHandler($event)">
                 <div class="form-group">
@@ -37,7 +37,7 @@
                             <i class="bi bi-envelope-at"></i>
                         </span>
                     </div>
-                  <validation-error [fieldControl]="signInForm.controls['username']"></validation-error>
+                    <validation-error [fieldControl]="signInForm.controls['username']"></validation-error>
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
@@ -48,7 +48,7 @@
                             <i class="bi bi-shield-lock"></i>
                         </span>
                     </div>
-                  <validation-error [fieldControl]="signInForm.controls['password']"></validation-error>
+                    <validation-error [fieldControl]="signInForm.controls['password']"></validation-error>
                 </div>
 
                 <div class="text-sm my-4">
@@ -70,15 +70,6 @@
             <div class="text-sm text-gray-400">
                 <p>Don't have any account? <a [routerLink]="commonService.prepareRoute(publicRoutes.Signup)"
                         class="text-emerald-600">Sign up</a> now!</p>
-            </div>
-
-            <div class="my-5"></div>
-
-            <div class="absolute left-0 right-0 bottom-0 text-center text-gray-500">
-                <p class="text-xs">All right reserved.
-                    <a href="anrajin.github.io/me" class="text-emerald-600">anrajin</a>
-                    &copy;&nbsp;{{currentYear}}
-                </p>
             </div>
         </div>
         <div class="md:block hidden text-white bg-emerald-600 rounded-lg p-8 xl:p-12">

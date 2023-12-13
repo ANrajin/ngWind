@@ -65,6 +65,10 @@
         @apply flex flex-col gap-y-1 mb-3
     }
 
+    .form-label {
+       @apply text-sm;
+    }
+
     .form-control {
         @apply py-2 px-3 text-sm rounded-lg border border-gray-100
     }
