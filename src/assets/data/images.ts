@@ -9,7 +9,7 @@ export class Images {
   public static readonly bannerLogo: string = './assets/images/logo/login.png';
 
   public static readonly auth: IAuth = {
-    signup: '../assets/images/log/login.png',
+    signup: './assets/images/authpage/signup.jpg',
   };
 
   public static readonly users: IUsers = {
