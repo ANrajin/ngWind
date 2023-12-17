@@ -1,16 +1,31 @@
-import {Component, Input} from '@angular/core';
-import {CommonModule} from "@angular/common";
-import {TabContents} from "./tab-contents.type";
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { TabContents } from "./tab-contents.type";
 
 @Component({
   selector: 'app-tab',
-  standalone: true,
-  imports: [
-      CommonModule
-  ],
   templateUrl: './tab.component.html',
-  styleUrl: './tab.component.css'
+  styleUrl: './tab.component.css',
+  encapsulation: ViewEncapsulation.None,
 })
-export class TabComponent {
+export class TabComponent implements OnInit {
   @Input() items: TabContents[] = [];
+  protected title: string = "";
+  protected content: string = "";
+
+
+  constructor() { }
+
+  ngOnInit(): void {
+    if (this.items.length > 0) {
+      this.title = this.items[0].TabTitle ?? "";
+      this.content = this.items[0].Contents ?? "";
+    }
+  }
+
+  handleIndex(index: number) {
+    if (this.items.length > 0) {
+      this.title = this.items[index].TabTitle ?? "";
+      this.content = this.items[index].Contents ?? "";
+    }
+  }
 }

@@ -1,14 +1,21 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { pageTransition } from 'src/app/shared/utils/animations';
 import { ModalComponent } from 'src/app/shared/components/modal/modal.component';
+import { ModalModule } from 'src/app/shared/components/modal/modal.module';
+import { pageTransition } from 'src/app/shared/utils/animations';
 
 @Component({
-  selector: 'app-elements',
-  templateUrl: './elements.component.html',
-  styleUrls: ['./elements.component.css'],
+  selector: 'app-admin-modal',
+  standalone: true,
+  imports: [
+    CommonModule,
+    ModalModule
+  ],
+  templateUrl: './admin-modal.component.html',
+  styleUrl: './admin-modal.component.css',
   animations: [pageTransition]
 })
-export class ElementsComponent {
+export class AdminModalComponent {
   showModal: boolean = false;
 
   modalCompnent: ModalComponent
