@@ -16,7 +16,7 @@
                 <div class="flex items-center">
                     <button type="button" (click)="onClickProfile()"
                         class="flex w-10 h-10 overflow-hidden rounded-full border-2 border-emerald-600 shadow">
-                        <img src="../../../../assets/profile-image.jpg" alt="john doe" class="w-full object-cover">
+                        <img src={{userOne}} alt="john doe" class="w-full object-cover">
                     </button>
                     <div class="text-left ml-3">
                         <p>johndoe</p>
@@ -28,7 +28,7 @@
                     <div class="flex gap-3 items-center">
                         <div
                             class="flex items-center justify-center rounded-full h-12 w-12 overflow-hidden border-2 border-emerald-600">
-                            <img class="w-full object-cover" src="../../../../assets/profile-image.jpg" alt="Profile">
+                            <img class="w-full object-cover" src={{userOne}} alt="Profile">
                         </div>
                         <div>
                             <div class="flex gap-1 text-sm font-semibold">

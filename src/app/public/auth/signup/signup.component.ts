@@ -6,6 +6,7 @@ import { PublicRoutes } from '../../public.routes';
 import { Router } from '@angular/router';
 import { AppRoutes } from 'src/app/app.routes';
 import { AdminRoutes } from 'src/app/admin/admin.routes';
+import { Images } from 'src/assets/data/images';
 
 @Component({
   selector: 'app-signup',
@@ -14,6 +15,7 @@ import { AdminRoutes } from 'src/app/admin/admin.routes';
   animations: [pageTransition]
 })
 export class SignupComponent {
+  readonly signupbannerImage:string = Images.auth.signup
   isLoading: boolean = false;
   readonly currentYear: number = DatetimeHelper.currentYear;
   readonly publicRoutes = PublicRoutes;

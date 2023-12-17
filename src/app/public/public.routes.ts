@@ -1,4 +1,5 @@
-export enum PublicRoutes{
-    Signup = 'signup',
-    Signin = 'signin',
+export enum PublicRoutes {
+  Home = '',
+  Signup = 'signup',
+  Signin = 'signin',
 }
