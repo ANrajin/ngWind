@@ -5,7 +5,7 @@ import { ModalModule } from 'src/app/shared/components/modal/modal.module';
 import { pageTransition } from 'src/app/shared/utils/animations';
 
 @Component({
-  selector: 'app-admin-modal',
+  selector: 'admin-modal',
   standalone: true,
   imports: [
     CommonModule,
