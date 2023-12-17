@@ -7,7 +7,8 @@ export enum AdminRoutes {
 
 export enum ElementRoutes {
     Alert = 'alert',
-    Modal = 'modal'
+    Modal = 'modal',
+    Tabs = 'tabs'
 }
 
 export enum SettingRoutes {

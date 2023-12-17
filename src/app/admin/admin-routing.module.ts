@@ -9,6 +9,7 @@ import { ProfileComponent } from './views/settings/profile/profile.component';
 import { UsersComponent } from './views/settings/users/users.component';
 import { TestComponent } from "./views/events/test/test.component";
 import { AdminAlertComponent } from './views/elements/alert/admin-alert.component';
+import {AdminTabComponent} from "./views/elements/tab/admin-tab.component";
 
 const routes: Routes = [
   {
@@ -30,7 +31,7 @@ const routes: Routes = [
         path: 'testing',
         component: TestComponent,
         outlet: 'test'
-      },
+      }
     ]
   },
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
         title: 'Alert',
         path: ElementRoutes.Alert,
         component: AdminAlertComponent
+      },
+      {
+        path: 'tabs',
+        component: AdminTabComponent,
       },
       {
         title: 'Modal',

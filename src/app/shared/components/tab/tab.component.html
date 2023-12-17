@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="nav-container">
+        <ng-container *ngIf="items.length > 0; else propTemplate">
+            <ul class="nav-hr">
+                <li class="nav-item" *ngFor="let item of items">
+                    <a href="javascript:void(0)" class="nav-link" #navLink
+                       [attr.aria-current]="item.IsActive ? 'page': ''"
+                       [attr.aria-disabled]="item.IsDisabled ? 'true': 'false'">
+                        {{item.Title}}
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content text-gray-900">
+                <div class="tab-body" #tabBody>
+                    <h3 class="tab-title" #tabTitle>Profile Tab</h3>
+                    <p #tabContents>
+                        It is a long established fact that a reader will be distracted by the readable content of a page when
+                        looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
+                        as opposed to using 'Content here, content here', making it look like readable English.
+                    </p>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-template #propTemplate>
+            <ng-content></ng-content>
+        </ng-template>
+    </div>
+</div>
