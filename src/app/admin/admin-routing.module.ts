@@ -3,24 +3,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminRoutes, ElementRoutes, SettingRoutes } from './admin.routes';
 import { AdminPageNotFoundComponent } from './views/admin-page-not-found/admin-page-not-found.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { AdminAlertComponent } from './views/elements/alert/admin-alert.component';
+import { ButtonsComponent } from './views/elements/buttons/buttons.component';
+import { AdminModalComponent } from './views/elements/modal/admin-modal.component';
+import { AdminTabComponent } from './views/elements/tab/admin-tab.component';
 import { EventsComponent } from './views/events/events.component';
+import { TestComponent } from './views/events/test/test.component';
 import { ProfileComponent } from './views/settings/profile/profile.component';
 import { UsersComponent } from './views/settings/users/users.component';
-import { TestComponent } from "./views/events/test/test.component";
-import { AdminAlertComponent } from './views/elements/alert/admin-alert.component';
-import { AdminTabComponent } from "./views/elements/tab/admin-tab.component";
-import { AdminModalComponent } from './views/elements/modal/admin-modal.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: AdminRoutes.Dashboard,
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     title: 'Dashboard',
     path: AdminRoutes.Dashboard,
-    component: DashboardComponent
+    component: DashboardComponent,
   },
   {
     title: 'Events',
@@ -30,9 +31,9 @@ const routes: Routes = [
       {
         path: 'testing',
         component: TestComponent,
-        outlet: 'test'
-      }
-    ]
+        outlet: 'test',
+      },
+    ],
   },
   {
     title: 'Elements',
@@ -41,7 +42,7 @@ const routes: Routes = [
       {
         title: 'Alert',
         path: ElementRoutes.Alert,
-        component: AdminAlertComponent
+        component: AdminAlertComponent,
       },
       {
         path: 'tabs',
@@ -50,9 +51,14 @@ const routes: Routes = [
       {
         title: 'Modal',
         path: ElementRoutes.Modal,
-        component: AdminModalComponent
-      }
-    ]
+        component: AdminModalComponent,
+      },
+      {
+        title: 'Buttons',
+        path: ElementRoutes.Buttons,
+        component: ButtonsComponent,
+      },
+    ],
   },
   {
     path: AdminRoutes.Settings,
@@ -60,23 +66,21 @@ const routes: Routes = [
       {
         title: 'Settings',
         path: SettingRoutes.Profile,
-        component: ProfileComponent
+        component: ProfileComponent,
       },
       {
         title: 'Users',
         path: SettingRoutes.Users,
-        component: UsersComponent
+        component: UsersComponent,
       },
-    ]
+    ],
   },
-  { path: '**', component: AdminPageNotFoundComponent }
+  { path: '**', component: AdminPageNotFoundComponent },
 ];
 
 @NgModule({
   declarations: [],
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
-export class AdminRoutingModule { }
+export class AdminRoutingModule {}

@@ -59,7 +59,7 @@
                     <a href="javascript:void(0)" class="text-emerald-600 float-right">Forget password?</a>
                 </div>
 
-                <button type="submit" class="btn w-full btn-primary" [disabled]="isLoading">
+                <button type="submit" class="btn w-full btn-theme" [disabled]="isLoading">
                     <btn-spinner *ngIf="isLoading" [show]="isLoading"></btn-spinner>
                     <span class="btn-text" [ngClass]="{'translate-x-0.5': isLoading}">
                         Sign in

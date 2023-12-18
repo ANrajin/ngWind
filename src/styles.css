@@ -20,31 +20,103 @@
         font-size: 0.5rem !important;
     }
 
-    /* Button */
+
+
+    /* buttons utility */
     .btn {
-      @apply px-2 py-2 h-11 flex justify-center items-center rounded-md transition ease-in-out duration-300;
-      font-size: 0.875rem !important;
+        @apply px-5 py-2 text-sm font-medium rounded-lg text-center transition-colors duration-300 border
     }
 
+    button:disabled{
+        @apply opacity-80
+    }
+
+    /* button sizes */
+
+    .btn-xs {
+        @apply px-3 py-2 text-xs
+    }
+
+    .btn-sm {
+        @apply px-3 py-2 text-sm
+    }
+
+    .btn-lg {
+        @apply px-5 py-3 text-sm
+    }
+
+    .btn-xl {
+        @apply px-6 py-3.5 text-sm
+    }
+
+    /* fill buttons type */
     .btn-text {
         @apply transition duration-150 ease-in-out;
     }
 
-    .btn:disabled {
-        @apply bg-emerald-500
+    .btn-theme {
+        @apply bg-emerald-700 border-emerald-700 text-white hover:bg-emerald-800  hover:border-emerald-800
+    }
+
+    .btn-theme:focus {
+        @apply outline-none ring-2 bg-emerald-600 ring-offset-1
     }
 
     .btn-primary {
-        @apply bg-emerald-600 text-white
+        @apply bg-blue-700 border-blue-700 text-white hover:bg-blue-800 hover:border-blue-800
     }
 
-    .btn-primary:hover {
-        @apply bg-emerald-500
+    .btn-info {
+        @apply bg-indigo-700 border-indigo-700 text-white hover:bg-indigo-800 hover:border-indigo-800
     }
 
-    .btn-primary:focus {
-        @apply outline-none ring-2 bg-emerald-600 ring-offset-1
+    .btn-success {
+        @apply bg-green-700 border-green-700 text-white hover:bg-green-800 hover:border-green-800
     }
+
+    .btn-danger {
+        @apply bg-red-700 border-red-700 text-white hover:bg-red-800 hover:border-red-800
+    }
+
+    .btn-warning {
+        @apply bg-yellow-600 border-yellow-600 text-white hover:bg-yellow-700 hover:border-yellow-700
+    }
+
+    .btn-secondary {
+        @apply bg-slate-700 border-slate-700 text-white hover:bg-slate-800 hover:border-slate-800
+    }
+
+    /* outline buttons type */
+
+    .btn-outline-primary {
+        @apply border bg-transparent border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white
+    }
+
+    .btn-outline-info {
+        @apply border bg-transparent border-indigo-700 text-indigo-700 hover:bg-indigo-700 hover:text-white
+    }
+
+    .btn-outline-success {
+        @apply border bg-transparent border-green-700 text-green-700 hover:bg-green-700 hover:text-white
+    }
+
+    .btn-outline-danger {
+        @apply border bg-transparent border-red-700 text-red-700 hover:bg-red-700 hover:text-white
+    }
+
+    .btn-outline-warning {
+        @apply border bg-transparent border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-white
+    }
+
+    .btn-outline-secondary {
+        @apply border bg-transparent border-slate-700 text-slate-700 hover:bg-slate-700 hover:text-white
+    }
+
+    /* icon with button */
+    .btn-icon {
+        @apply inline-flex items-center
+    }
+
 
     /* Card */
     .card {
