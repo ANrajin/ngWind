@@ -1,0 +1,24 @@
+<div class="nav-container">
+    <ng-container *ngIf="items.length > 0; else customContent">
+        <ul appTab>
+            <li *ngFor="let item of items; index as i" appTabItem>
+                <a href="javascript:void(0)" [attr.aria-current]="item.IsActive ? 'true': 'false'"
+                    [attr.aria-disabled]="item.IsDisabled ? 'true': 'false'" [attr.aria-valuenow]="i"
+                    (index)="handleIndex($event)" appTabLink>
+                    {{item.Title}}
+                </a>
+            </li>
+        </ul>
+
+        <div class="tab-content text-gray-900" appTabContent>
+            <div class="tab-body">
+                <h3 class="tab-title" *ngIf="title">{{title}}</h3>
+                <p>{{content}}</p>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-template #customContent>
+        <ng-content></ng-content>
+    </ng-template>
+</div>
