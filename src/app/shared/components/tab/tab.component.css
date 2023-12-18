@@ -1,0 +1,35 @@
+.nav-container {
+    @apply text-sm font-medium text-gray-500
+}
+
+.nav-hr {
+    @apply flex flex-wrap -mb-px text-center
+}
+
+.nav-item {
+    @apply me-2
+}
+
+.nav-link {
+    @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-slate-600 hover:border-slate-300
+}
+
+.nav-link[aria-current=true] {
+    @apply border-emerald-600 text-emerald-600
+}
+
+.nav-link[aria-disabled=true] {
+    @apply text-gray-400 hover:border-0 rounded-t-lg cursor-not-allowed
+}
+
+.tab-content {
+    @apply mt-2
+}
+
+.tab-body {
+    @apply p-6 bg-slate-50 rounded-lg w-full text-sm
+}
+
+.tab-title {
+    @apply text-lg font-bold mb-2
+}
