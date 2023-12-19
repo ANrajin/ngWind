@@ -10,6 +10,7 @@ export enum ElementRoutes {
   Modal = 'modal',
   Buttons = 'buttons',
   Tabs = 'tabs',
+  DataTable = 'data-table',
 }
 
 export enum SettingRoutes {
