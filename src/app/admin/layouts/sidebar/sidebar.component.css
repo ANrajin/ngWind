@@ -1,6 +1,6 @@
 /* Sidebar */
 .sidebar {
-    @apply sticky top-0 px-3 bg-slate-900 min-h-screen pt-5 transition-all duration-300
+    @apply sticky top-0 px-3 bg-slate-50 min-h-screen pt-5 transition-all duration-300
 }
 
 .sidebar[aria-expanded=true] {
@@ -45,11 +45,11 @@ app-sidebar[aria-expanded="false"] .brand {
 }
 
 .menu-item.active {
-    @apply text-emerald-600
+    @apply text-cornflowerBlue-500
 }
 
 .menu-item:hover {
-    @apply bg-slate-800 text-emerald-600
+    @apply bg-cornflowerBlue-500 text-slate-50
 }
 
 .menu-item i::before {
@@ -61,7 +61,7 @@ app-sidebar[aria-expanded="false"] .brand {
 }
 
 .sub-menu[aria-expanded=true] {
-    @apply text-gray-300
+    @apply text-celestialBlue-400
 }
 
 .sub-menu::after {
@@ -83,7 +83,7 @@ app-sidebar[aria-expanded="false"] .brand {
 }
 
 .sub-menu-item {
-    @apply flex flex-col ml-4 pl-2 border-l border-slate-700 text-sm overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out
+    @apply flex flex-col ml-4 pl-2 border-l border-slate-300 text-sm overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out
 }
 
 .sub-menu[aria-expanded=true]+.sub-menu-item {
