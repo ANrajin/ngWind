@@ -14,7 +14,7 @@ import { PublicRoutes } from '../../public.routes';
   styleUrl: './header.component.css',
 })
 export class PublicHeaderComponent {
-  public mainLogo: string = Images.mainLogo;
+  public mainLogo: string = Images.devSkillLogo;
   readonly publicRoutes = PublicRoutes;
   readonly appRoutes = AppRoutes;
   readonly adminRoutes = AdminRoutes;

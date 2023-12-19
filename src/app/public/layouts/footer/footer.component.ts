@@ -11,5 +11,5 @@ import { Images } from 'src/assets/data/images';
 })
 export class PublicFooterComponent {
   public readonly currentYear: number = DatetimeHelper.currentYear;
-  public mainLogo: string = Images.mainLogo;
+  public mainLogo: string = Images.devSkillLogo;
 }
