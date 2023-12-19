@@ -5,11 +5,12 @@ import { AdminRoutes } from 'src/app/admin/admin.routes';
 import { AppRoutes } from 'src/app/app.routes';
 import { Images } from 'src/assets/data/images';
 import { PublicRoutes } from '../../public.routes';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'public-header',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink,NgClass],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
@@ -18,5 +19,14 @@ export class PublicHeaderComponent {
   readonly publicRoutes = PublicRoutes;
   readonly appRoutes = AppRoutes;
   readonly adminRoutes = AdminRoutes;
+
+  isOpen: boolean = true;
+
   constructor(public readonly commonService: CommonService) {}
+
+  openMobileMenu() {
+    this.isOpen = !this.isOpen;
+
+    console.log(this.isOpen);
+  }
 }

@@ -6,7 +6,7 @@
             <img class="h-8 w-24" src={{mainLogo}} alt="">
          </a>
       </div>
-      <div class="flex lg:hidden">
+      <div class="flex lg:hidden" (click)="openMobileMenu()">
          <button type="button" class="navbar-toggler">
             <span class="sr-only">Open main menu</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -30,7 +30,7 @@
       </div>
    </nav>
    <!-- Mobile menu, show/hide based on menu open state. -->
-   <div class="lg:hidden" role="dialog" aria-modal="true">
+   <div class="lg:hidden" [ngClass]="isOpen ? 'block' :'hidden'" role="dialog" aria-modal="true">
       <!-- Background backdrop, show/hide based on slide-over state. -->
       <div class="fixed inset-0 z-10"></div>
       <div
@@ -40,7 +40,7 @@
                <span class="sr-only">Your Company</span>
                <img class="h-8 w-auto" src={{mainLogo}} alt="">
             </a>
-            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" (click)="openMobileMenu()">
                <span class="sr-only">Close menu</span>
                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                   aria-hidden="true">
@@ -51,14 +51,12 @@
          <div class="mt-6 flow-root">
             <div class="-my-6 divide-y divide-gray-500/10">
                <div class="space-y-2 py-6">
-                  <a href="#" class="">
-                     Features
+                  <a (click)="openMobileMenu()" [routerLink]="commonService.prepareRoute(publicRoutes.Home)" class="nav-link-mobile">
+                     Home
                   </a>
-                  <a href="#" class="nav-link">
-                     Marketplace
-                  </a>
-                  <a href="#" class="nav-link">
-                     Company
+                  <a (click)="openMobileMenu()" [routerLink]="commonService.prepareRoute(appRoutes.Admin, adminRoutes.Dashboard)"
+                     class="nav-link-mobile">
+                     Dashboard
                   </a>
                </div>
                <div class="py-6">
