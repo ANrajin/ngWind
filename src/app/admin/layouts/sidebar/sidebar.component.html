@@ -1,10 +1,7 @@
 <aside>
     <div class="brand-wrapper">
         <a href="#" class="brand text-center">
-            <h1 class="flex items-center font-bold text-slate-300">
-                <span class="text-4xl mr-2 bg-green-600 w-10 h-10 rounded-md">H</span>
-                <span class="text-2xl">HYLOS</span>
-            </h1>
+            <img [src]="devSkillLogo" alt="Dev Skill" class="w-36 h-20">
         </a>
         <button type="button" class="bg-slate-700 px-1 rounded hover:text-emerald-600 transition ease-in-out"
             (click)="sidebarCollapsedHandler()">
@@ -42,8 +39,8 @@
                 </li>
                 <li>
                     <a class="menu-item"
-                       [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Tabs)"
-                       routerLinkActive="active" ariaCurrentWhenActive="page">
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Tabs)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
                         <span>Tabs</span>
                     </a>
                 </li>
