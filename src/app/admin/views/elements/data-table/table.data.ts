@@ -6,6 +6,15 @@ export interface IProduct {
   price: number;
 }
 
+export interface IColumn {
+  field: string;
+  headerName: string;
+  width?: number;
+  isEditable?: boolean;
+  isSortable?: boolean;
+  type?: string | number | boolean ;
+}
+
 export class TableData {
   public static readonly products: IProduct[] = [
     {
@@ -105,6 +114,48 @@ export class TableData {
       color: 'Silver',
       category: 'Accessories',
       price: 29,
+    },
+  ];
+  public static  readonly columnData: IColumn[] = [
+    {
+      field: 'productname',
+      headerName: 'PRODUCT NAME',
+      width: 25,
+      isEditable: true,
+      isSortable: false,
+      
+    },
+    {
+      field: 'color',
+      headerName: 'Color',
+      width: 25,
+      isEditable: true,
+      isSortable: false,
+     
+    },
+    {
+      field: 'category',
+      headerName: 'Category',
+      width: 25,
+      isEditable: true,
+      isSortable: false,
+   
+    },
+    {
+      field: 'price',
+      headerName: 'Price',
+      width: 25,
+      isEditable: true,
+      isSortable: false,
+  
+    },
+    {
+      field: 'action',
+      headerName: 'Action',
+      width: 25,
+      isEditable: true,
+      isSortable: false,
+   
     },
   ];
 

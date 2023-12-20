@@ -1,1 +1,110 @@
-<p>data-table works!</p>
+<div class="card p-5 ">
+   <div class="card-title">
+      <h3 class="text-xl font-bold leading-none mb-8">Table</h3>
+   </div>
+   <div class="mt-3">
+      <div class=" sm:rounded-lg">
+         <!-- <div class="flex items-center justify-between flex-column   pb-4">
+            <div>
+               <button class="btn btn-xs btn-outline-primary rounded-sm px-5 my-0">
+                  Filter
+               </button>
+            </div>
+            <div>
+               <div class="relative">
+                  <input type="email" id="email" class="form-control w-full ps-10" formControlName="username"
+                     placeholder="Search">
+                  <span class="absolute top-2 left-0 ps-3 text-gray-400">
+                     <i class="bi bi-search"></i>
+                  </span>
+               </div>
+            </div>
+         </div> -->
+         <div class="data-table">
+            <div class="table-container">
+               <table class="ng-wind-table">
+                  <thead class="ng-wind-table-header">
+                     <tr>
+                        <th scope="col" class="ng-wind-header-item">
+                           Product name
+                        </th>
+                        <th scope="col" class="ng-wind-header-item">
+                           Color
+                        </th>
+                        <th scope="col" class="ng-wind-header-item">
+                           Category
+                        </th>
+                        <th scope="col" class="ng-wind-header-item">
+                           Price
+                        </th>
+                        <th scope="col" class="ng-wind-header-item text-center">
+                           Action
+                        </th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     @for (product of rowData; track product?.id){
+                     <tr class="bg-white border-b  hover:bg-gray-50">
+                        <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap ">
+                           {{product?.name}}
+                        </td>
+                        <td class="ng-wind-data-item">
+                           {{product?.color}}
+                        </td>
+                        <td class="ng-wind-data-item">
+                           {{product?.category}}
+                        </td>
+                        <td class="ng-wind-data-item">
+                           {{product?.price}}
+                        </td>
+                        <td class="ng-wind-data-item text-center">
+                           <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        </td>
+                     </tr>
+                     }
+
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <nav class="ng-wind-table-pagination" aria-label="Table navigation">
+            <div class="ng-wind-table-page-view">
+               Rows per page:
+               <div class="flex  mx-2 rounded-md">
+                  <select id="states" class="bg-gray-100  text-gray-900 
+                   block w-full p-1 rounded-sm text-xs">
+                     <option value="10">10</option>
+                     <option value="20">20</option>
+                     <option value="50">50</option>
+                     <option value="100">100</option>
+                     <option value="200">200</option>
+                     <option value="300">300</option>
+                     <option value="400">400</option>
+                  </select>
+               </div>
+               <span class="font-semibold text-gray-900  ms-4 me-1">1-10</span> of
+               <span class="font-semibold text-gray-900 ms-1">1000</span>
+            </div>
+
+            <ul class="inline-flex -space-x-px rtl:space-x-reverse text-xs h-8">
+               <li>
+                  <a href="#" class="ng-wind-page-prev">
+                     Prev
+                  </a>
+               </li>
+               @for (page of pageData; track page){
+               <li>
+                  <a href="#" aria-current="page" [ngClass]="page == 4 ? 'active-page' : 'bg-white hover:bg-gray-100' "
+                     class="page-number">
+                     {{page}}
+                  </a>
+               </li>
+               }
+               <li>
+                  <a href="#" class="ng-wind-page-next ">Next</a>
+               </li>
+            </ul>
+         </nav>
+      </div>
+   </div>
+</div>
