@@ -1,5 +1,41 @@
+.data-table {
+  & .table-container {
+    height: 410px;
+    max-height: 412px;
+    overflow: auto;
+  }
 
+  th {
+    @apply bg-slate-50;
+  }
 
-.page-number-show-dropdown:focus{
+  & th[scope="col"] {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.table-container::-webkit-scrollbar {
+  width: 3px;
+  height: 5px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  @apply bg-slate-200;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  @apply bg-slate-500 rounded-sm;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-200;
+}
+
+.table-container {
+  scrollbar-width: thin;
+  scrollbar-color: bg-slate-500
+}
+.page-number-show-dropdown:focus {
   border: 0 !important;
 }

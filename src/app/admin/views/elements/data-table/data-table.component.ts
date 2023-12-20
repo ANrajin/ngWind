@@ -1,6 +1,6 @@
+import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { IProduct, TableData } from './table.data';
-import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-data-table',
@@ -9,7 +9,7 @@ import { NgClass } from '@angular/common';
   templateUrl: './data-table.component.html',
   styleUrl: './data-table.component.css',
 })
-export class DataTableComponent {
+export class AdminDataTableComponent {
   public products: IProduct[] = TableData.products;
   public pages: number[] = TableData.pageNumber;
 }

@@ -5,7 +5,7 @@ import { AdminPageNotFoundComponent } from './views/admin-page-not-found/admin-p
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AdminAlertComponent } from './views/elements/alert/admin-alert.component';
 import { ButtonsComponent } from './views/elements/buttons/buttons.component';
-import { DataTableComponent } from './views/elements/data-table/data-table.component';
+import { AdminDataTableComponent } from './views/elements/data-table/data-table.component';
 import { AdminModalComponent } from './views/elements/modal/admin-modal.component';
 import { AdminTabComponent } from './views/elements/tab/admin-tab.component';
 import { EventsComponent } from './views/events/events.component';
@@ -62,7 +62,7 @@ const routes: Routes = [
       {
         title: 'Data Table',
         path: ElementRoutes.DataTable,
-        component: DataTableComponent,
+        component: AdminDataTableComponent,
       },
     ],
   },

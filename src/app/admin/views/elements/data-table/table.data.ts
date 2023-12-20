@@ -78,6 +78,34 @@ export class TableData {
       category: 'Accessories',
       price: 29,
     },
+    {
+      id: 7,
+      name: 'iPad Pro',
+      color: 'Gold',
+      category: 'Tablet',
+      price: 699,
+    },
+    {
+      id: 8,
+      name: 'Magic Keyboard',
+      color: 'Black',
+      category: 'Accessories',
+      price: 99,
+    },
+    {
+      id: 9,
+      name: 'Smart Folio iPad Air',
+      color: 'Blue',
+      category: 'Accessories',
+      price: 79,
+    },
+    {
+      id: 10,
+      name: 'AirTag',
+      color: 'Silver',
+      category: 'Accessories',
+      price: 29,
+    },
   ];
 
   public static readonly pageNumber: number[] = [1, 2, 3, 4, 5];
