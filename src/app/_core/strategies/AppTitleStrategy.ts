@@ -13,7 +13,7 @@ export class AppTitleStrategy extends TitleStrategy {
         const title = this.buildTitle(routerState);
 
         if (title !== undefined) {
-            this.title.setTitle(`Hylos - ${title}`);
+            this.title.setTitle(`Ngwind - ${title}`);
         }
     }
 }
