@@ -1,0 +1,43 @@
+<div [@pageTransition]>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Input Sizes</h3>
+      </div>
+      <div class="mt-5">
+         <form class="max-w-sm">
+            <div class="mb-5">
+               <label for="large-input" class="form-label ">
+                  Large input
+               </label>
+               <input type="text" id="large-input" placeholder="Large input" class="form-control form-control-lg">
+            </div>
+            <div class="mb-5">
+               <label for="base-input" class="form-label ">
+                  Base input
+               </label>
+               <input type="text" id="base-input" placeholder="Base input" class="form-control">
+            </div>
+            <div>
+               <label for="small-input" class="form-label">
+                  Small input
+               </label>
+               <input type="text" id="small-input" placeholder="Small input" class="form-control form-control-sm">
+            </div>
+         </form>
+      </div>
+   </div>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Toggle Switch</h3>
+      </div>
+      <div class="mt-5">
+         <label class="relative inline-flex items-center mb-5 cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer">
+            <div
+               class="w-10 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-4 after:h-4 after:transition-all peer-checked:bg-blue-600">
+            </div>
+            <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me</span>
+         </label>
+      </div>
+   </div>
+</div>
