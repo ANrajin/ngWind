@@ -119,7 +119,7 @@ export class TableData {
   public static  readonly columnData: IColumn[] = [
     {
       field: 'productname',
-      headerName: 'PRODUCT NAME',
+      headerName: 'product name',
       width: 25,
       isEditable: true,
       isSortable: false,
