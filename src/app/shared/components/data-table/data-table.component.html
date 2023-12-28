@@ -27,6 +27,12 @@
                      <tr>
                         <th scope="col" class="ng-wind-header-item">
                            Product name
+                           <button (click)="sortingUp()" *ngIf="shorting === false" class="ml-2 text-lg">
+                              <i class="bi bi-arrow-down-short"></i>
+                           </button>
+                           <button (click)="sortingDown()" *ngIf="shorting === true" class="ml-2 text-lg">
+                              <i class="bi bi-arrow-up-short"></i>
+                           </button>
                         </th>
                         <th scope="col" class="ng-wind-header-item">
                            Color
