@@ -6,24 +6,38 @@
       <div class="mt-5">
          <form class="max-w-sm">
             <div class="form-group">
-               <label for="large-input" class="form-label ">
-                  Large input
-               </label>
-               <input type="text" id="large-input" placeholder="Large input" class="form-control form-control-lg">
+               <label for="large-input" class="form-label"> Large input </label>
+               <input type="text" id="large-input" placeholder="Large input" class="form-control form-control-lg" />
             </div>
             <div class="form-group">
-               <label for="base-input" class="form-label ">
-                  Base input
-               </label>
-               <input type="text" id="base-input" placeholder="Base input" class="form-control">
+               <label for="base-input" class="form-label"> Base input </label>
+               <input type="text" id="base-input" placeholder="Base input" class="form-control" />
             </div>
             <div class="form-group">
-               <label for="small-input" class="form-label">
-                  Small input
-               </label>
-               <input type="text" id="small-input" placeholder="Small input" class="form-control form-control-sm">
+               <label for="small-input" class="form-label"> Small input </label>
+               <input type="text" id="small-input" placeholder="Small input" class="form-control form-control-sm" />
             </div>
          </form>
+      </div>
+   </div>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Select input</h3>
+      </div>
+      <div class="mt-5">
+         <form class="max-w-sm">
+            <label for="countries" class="form-label">
+               Select your country
+            </label>
+            <select id="countries" class="form-select">
+
+               <option>United States</option>
+               <option>Canada</option>
+               <option>France</option>
+               <option>Germany</option>
+            </select>
+         </form>
+         
       </div>
    </div>
    <div class="card p-5">
@@ -31,44 +45,24 @@
          <h3 class="text-xl font-bold leading-none">Checkbox</h3>
       </div>
       <div class="mt-5">
-         <div class="flex items-center mb-4">
-            <input checked id="checkbox-1" type="checkbox" value=""
-               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="checkbox-1" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree to the
+         <div class="form-check">
+            <input checked id="checkbox-1" type="checkbox" value="" class="form-check-input" />
+            <label for="checkbox-1" class="form-check-label">I agree to the
                <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
          </div>
-         <div class="flex items-center mb-4">
-            <input id="checkbox-2" type="checkbox" value=""
-               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="checkbox-2" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I want to get
+         <div class="form-check">
+            <input id="checkbox-2" type="checkbox" value="" class="form-check-input" />
+            <label for="checkbox-2" class="form-check-label">I want to get
                promotional offers</label>
          </div>
-         <div class="flex items-center mb-4">
-            <input id="checkbox-3" type="checkbox" value=""
-               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            <label for="checkbox-3" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I am 18 years
-               or
+         <div class="form-check">
+            <input id="checkbox-3" type="checkbox" value="" class="form-check-input" />
+            <label for="checkbox-3" class="form-check-label">I am 18 years or
                older</label>
          </div>
-         <div class="flex mb-4">
-            <div class="flex items-center h-5">
-               <input id="helper-checkbox" aria-describedby="helper-checkbox-text" type="checkbox" value=""
-                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-            </div>
-            <div class="ms-2 text-sm">
-               <label for="helper-checkbox" class="font-medium text-gray-900 dark:text-gray-300">Free shipping via
-                  Flowbite</label>
-               <p id="helper-checkbox-text" class="text-xs font-normal text-gray-500 dark:text-gray-400">For orders
-                  shipped
-                  from $25 in books or $29 in other categories</p>
-            </div>
-         </div>
-         <div class="flex items-center">
-            <input id="international-shipping-disabled" type="checkbox" value=""
-               class="w-4 h-4 border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-               disabled>
-            <label for="international-shipping-disabled"
-               class="ms-2 text-sm font-medium text-gray-400 dark:text-gray-500">Eligible for international shipping
+         <div class="form-check">
+            <input id="international-shipping-disabled" type="checkbox" value="" class="form-check-input" disabled />
+            <label for="international-shipping-disabled" class="form-check-label">Eligible for international shipping
                (disabled)</label>
          </div>
       </div>
@@ -79,49 +73,42 @@
       </div>
       <div class="mt-5">
          <div class="flex items-center mb-4">
-            <input id="gender-option-1" type="radio" name="gender" value="man" class="w-4 h-4 border-gray-300 " checked>
-            <label for="gender-option-1" class="block ms-2  text-sm font-medium text-gray-900 ">
+            <input id="gender-option-1" type="radio" name="gender" value="man" class="form-check-input" checked />
+            <label for="gender-option-1" class="form-check-label">
                Man
             </label>
          </div>
          <div class="flex items-center mb-4">
-            <input id="gender-option-2" type="radio" name="gender" value="women" class="w-4 h-4 border-gray-300 ">
-            <label for="gender-option-2" class="block ms-2 text-sm font-medium text-gray-900 ">
+            <input id="gender-option-2" type="radio" name="gender" value="women" class="form-check-input" />
+            <label for="gender-option-2" class="form-check-label">
                Women
             </label>
          </div>
          <div class="flex items-center mb-4">
-            <input id="gender-option-3" type="radio" name="gender" value="other" class="w-4 h-4 border-gray-300 ">
-            <label for="gender-option-3" class="block ms-2 text-sm font-medium text-gray-900 ">
+            <input id="gender-option-3" type="radio" name="gender" value="other" class="form-check-input" />
+            <label for="gender-option-3" class="form-check-label">
                Other
             </label>
          </div>
          <div class="flex items-center mb-4">
-            <input id="gender-option-4" type="radio" name="gender" value="none" class="w-4 h-4 border-gray-300 "
-               disabled>
-            <label for="gender-option-4" class="block ms-2 text-sm font-medium text-gray-900">
+            <input id="gender-option-4" type="radio" name="gender" value="none" class="form-check-input" disabled />
+            <label for="gender-option-4" class="form-check-label">
                none
             </label>
          </div>
       </div>
-
    </div>
    <div class="card p-5">
       <div class="card-title">
          <h3 class="text-xl font-bold leading-none">Toggle Switch</h3>
       </div>
       <div class="mt-5">
-         <label class="relative inline-flex items-center mb-5 cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer">
-            <div
-               class="w-10 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-blue-300 rounded-full peer  peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-4 after:h-4 after:transition-all peer-checked:bg-blue-600">
+         <label class="form-switch">
+            <input type="checkbox" value="" class="sr-only peer" />
+            <div class="form-input-switch">
             </div>
-            <span class="ms-3 text-sm font-medium text-gray-900 ">Toggle me</span>
+            <span class="form-check-label">Toggle me</span>
          </label>
       </div>
    </div>
 </div>
-
-
-
-
