@@ -175,6 +175,19 @@
   .form-select {
     @apply py-2 px-2 block w-full border border-gray-200 text-gray-900 text-sm rounded-md !outline-none input;
   }
+
+  label.required::after {
+    content: "*";
+    @apply ml-[3px] text-red-500;
+  }
+
+  .file-upload {
+    @apply block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none;
+  }
+
+  input[type="file"]::file-selector-button {
+    @apply border-0 py-2 px-4 bg-blue-700 text-white hover:bg-blue-600 cursor-pointer transition-colors 
+  } 
 }
 
 /*Additional Global Css Overrides*/
