@@ -10,6 +10,7 @@ export enum ElementRoutes {
   Modal = 'modal',
   Buttons = 'buttons',
   Tabs = 'tabs',
+  Forms = 'forms'
 }
 
 export enum SettingRoutes {

@@ -1,0 +1,234 @@
+<div [@pageTransition]>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Input Sizes</h3>
+      </div>
+      <div class="mt-5">
+         <form class="max-w-sm">
+            <div class="form-group">
+               <label for="large-input" class="form-label required"> Large input </label>
+               <input type="text" id="large-input" placeholder="Large input" class="form-control form-control-lg" />
+            </div>
+            <div class="form-group">
+               <label for="base-input" class="form-label"> Base input </label>
+               <input type="text" id="base-input" placeholder="Base input" class="form-control" />
+            </div>
+            <div class="form-group">
+               <label for="small-input" class="form-label"> Small input </label>
+               <input type="text" id="small-input" placeholder="Small input" class="form-control form-control-sm" />
+            </div>
+         </form>
+      </div>
+   </div>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Select input</h3>
+      </div>
+      <div class="mt-5">
+         <form class="max-w-sm">
+            <label for="countries" class="form-label">
+               Select your country
+            </label>
+            <select id="countries" class="form-select">
+
+               <option>United States</option>
+               <option>Canada</option>
+               <option>France</option>
+               <option>Germany</option>
+            </select>
+         </form>
+      </div>
+   </div>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Input element with icon</h3>
+      </div>
+      <div class="mt-5">
+         <form class="max-w-sm">
+            <label for="email-address-icon" class="form-label">Your
+               Email
+            </label>
+            <div class="relative">
+               <div class="form-input-icon">
+                  <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                     xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                     <path
+                        d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                     <path
+                        d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                  </svg>
+               </div>
+               <input type="text" id="email-address-icon"
+                  class="form-control ps-10"
+                  placeholder="icon@email.com">
+            </div>
+         </form>
+
+      </div>
+   </div>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Textarea</h3>
+      </div>
+      <div class="mt-5">
+         <form class="max-w-sm">
+            <label for="message" class="form-label">
+               Your message
+            </label>
+            <textarea id="message" rows="4" class="form-control" placeholder="Leave a comment..."></textarea>
+         </form>
+      </div>
+   </div>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">File upload</h3>
+      </div>
+      <div class="mt-5">
+         <form class="max-w-lg">
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="user_avatar">
+               Upload file
+            </label>
+            <input class="file-upload file" aria-describedby="user_avatar_help" id="user_avatar" type="file">
+            <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">
+               A profile picture is useful to confirm your are logged into your account
+            </div>
+         </form>
+      </div>
+   </div>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Checkbox</h3>
+      </div>
+      <div class="mt-5">
+         <div class="form-check">
+            <input checked id="checkbox-1" type="checkbox" value="" class="form-check-input" />
+            <label for="checkbox-1" class="form-check-label">I agree to the
+               <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a>.</label>
+         </div>
+         <div class="form-check">
+            <input id="checkbox-2" type="checkbox" value="" class="form-check-input" />
+            <label for="checkbox-2" class="form-check-label">I want to get
+               promotional offers</label>
+         </div>
+         <div class="form-check">
+            <input id="checkbox-3" type="checkbox" value="" class="form-check-input" />
+            <label for="checkbox-3" class="form-check-label">I am 18 years or
+               older</label>
+         </div>
+         <div class="form-check">
+            <input id="international-shipping-disabled" type="checkbox" value="" class="form-check-input" disabled />
+            <label for="international-shipping-disabled" class="form-check-label">Eligible for international shipping
+               (disabled)</label>
+         </div>
+      </div>
+   </div>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Radio buttons</h3>
+      </div>
+      <div class="mt-5">
+         <div class="flex items-center mb-4">
+            <input id="gender-option-1" type="radio" name="gender" value="man" class="form-check-input" checked />
+            <label for="gender-option-1" class="form-check-label">
+               Man
+            </label>
+         </div>
+         <div class="flex items-center mb-4">
+            <input id="gender-option-2" type="radio" name="gender" value="women" class="form-check-input" />
+            <label for="gender-option-2" class="form-check-label">
+               Women
+            </label>
+         </div>
+         <div class="flex items-center mb-4">
+            <input id="gender-option-3" type="radio" name="gender" value="other" class="form-check-input" />
+            <label for="gender-option-3" class="form-check-label">
+               Other
+            </label>
+         </div>
+         <div class="flex items-center mb-4">
+            <input id="gender-option-4" type="radio" name="gender" value="none" class="form-check-input" disabled />
+            <label for="gender-option-4" class="form-check-label">
+               none
+            </label>
+         </div>
+      </div>
+   </div>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Toggle Switch</h3>
+      </div>
+      <div class="mt-5">
+         <label class="form-switch">
+            <input type="checkbox" value="" class="sr-only peer" />
+            <div class="form-input-switch">
+            </div>
+            <span class="form-check-label">Toggle me</span>
+         </label>
+      </div>
+   </div>
+   <div class="card p-5">
+      <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Full form</h3>
+      </div>
+      <div class="mt-5">
+         <form class="max-w-2xl p-4">
+            <div class="grid grid-cols-12 gap-x-6 space-y-4">
+               <div class="col-span-12 md:col-span-8 mb-4">
+                  <div class="col-span-full">
+                     <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">
+                        Cover photo
+                     </label>
+                     <div class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-8">
+                        <div class="text-center">
+                           <svg class="mx-auto h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
+                              aria-hidden="true">
+                              <path fill-rule="evenodd"
+                                 d="M1.5 6a2.25 2.25 0 012.25-2.25h16.5A2.25 2.25 0 0122.5 6v12a2.25 2.25 0 01-2.25 2.25H3.75A2.25 2.25 0 011.5 18V6zM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0021 18v-1.94l-2.69-2.689a1.5 1.5 0 00-2.12 0l-.88.879.97.97a.75.75 0 11-1.06 1.06l-5.16-5.159a1.5 1.5 0 00-2.12 0L3 16.061zm10.125-7.81a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0z"
+                                 clip-rule="evenodd" />
+                           </svg>
+                           <div class="mt-4 flex text-sm leading-6 text-gray-600">
+                              <label for="file-upload"
+                                 class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none  hover:text-indigo-500">
+                                 <span>Upload a file</span>
+                                 <input id="file-upload" name="file-upload" type="file" class="sr-only">
+                              </label>
+                              <p class="pl-1">or drag and drop</p>
+                           </div>
+                           <p class="text-xs leading-5 text-gray-600">PNG, JPG, GIF up to 10MB</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-span-12 md:col-span-6">
+                  <div class="form-group">
+                     <label for="base-input" class="form-label required"> First Name</label>
+                     <input type="text" id="base-input" placeholder="First Name " class="form-control" />
+                  </div>
+               </div>
+               <div class="col-span-12 md:col-span-6">
+                  <div class="form-group">
+                     <label for="base-input" class="form-label"> Last Name </label>
+                     <input type="text" id="base-input" placeholder="Last Name" class="form-control" />
+                  </div>
+               </div>
+               <div class="col-span-12 md:col-span-6">
+                  <div class="form-group">
+                     <label for="base-input" class="form-label required"> Email</label>
+                     <input type="text" id="base-input" placeholder="smith@email.com" class="form-control" />
+                  </div>
+               </div>
+               <div class="col-span-12 md:col-span-6">
+                  <div class="form-group">
+                     <label for="base-input" class="form-label"> Address</label>
+                     <input type="text" id="base-input" placeholder="vill/ thana/ post" class="form-control" />
+                  </div>
+               </div>
+            </div>
+            <div class="mt-10 flex  gap-x-6">
+               <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
+               <button type="submit" class="btn btn-primary btn-sm">Save</button>
+            </div>
+         </form>
+
+      </div>
+   </div>
