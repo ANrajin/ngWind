@@ -6,12 +6,14 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AdminAlertComponent } from './views/elements/alert/admin-alert.component';
 import { ButtonsComponent } from './views/elements/buttons/buttons.component';
 import { AdminDataTableComponent } from './views/elements/data-table/data-table.component';
+import { FormsComponent } from './views/elements/forms/forms.component';
 import { AdminModalComponent } from './views/elements/modal/admin-modal.component';
 import { AdminTabComponent } from './views/elements/tab/admin-tab.component';
 import { EventsComponent } from './views/events/events.component';
 import { TestComponent } from './views/events/test/test.component';
 import { ProfileComponent } from './views/settings/profile/profile.component';
 import { UsersComponent } from './views/settings/users/users.component';
+
 
 const routes: Routes = [
   {
@@ -63,6 +65,11 @@ const routes: Routes = [
         title: 'Data Table',
         path: ElementRoutes.DataTable,
         component: AdminDataTableComponent,
+      },
+      {
+        title: 'Forms',
+        path: ElementRoutes.Forms,
+        component: FormsComponent,
       },
     ],
   },
