@@ -42,8 +42,8 @@
                 </li>
                 <li>
                     <a class="menu-item"
-                       [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Tabs)"
-                       routerLinkActive="active" ariaCurrentWhenActive="page">
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Tabs)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
                         <span>Tabs</span>
                     </a>
                 </li>
@@ -73,6 +73,13 @@
                         [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Forms)"
                         routerLinkActive="active" ariaCurrentWhenActive="page">
                         <span>Forms</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Accordions)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Accordions</span>
                     </a>
                 </li>
             </ul>

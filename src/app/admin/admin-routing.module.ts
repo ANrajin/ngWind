@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminRoutes, ElementRoutes, SettingRoutes } from './admin.routes';
 import { AdminPageNotFoundComponent } from './views/admin-page-not-found/admin-page-not-found.component';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { AccordionsComponent } from './views/elements/accordions/accordions.component';
 import { AdminAlertComponent } from './views/elements/alert/admin-alert.component';
 import { ButtonsComponent } from './views/elements/buttons/buttons.component';
 import { AdminDataTableComponent } from './views/elements/data-table/data-table.component';
@@ -13,7 +14,6 @@ import { EventsComponent } from './views/events/events.component';
 import { TestComponent } from './views/events/test/test.component';
 import { ProfileComponent } from './views/settings/profile/profile.component';
 import { UsersComponent } from './views/settings/users/users.component';
-
 
 const routes: Routes = [
   {
@@ -70,6 +70,11 @@ const routes: Routes = [
         title: 'Forms',
         path: ElementRoutes.Forms,
         component: FormsComponent,
+      },
+      {
+        title: 'Accordions',
+        path: ElementRoutes.Accordions,
+        component: AccordionsComponent,
       },
     ],
   },

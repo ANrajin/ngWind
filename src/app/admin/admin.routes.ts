@@ -12,6 +12,7 @@ export enum ElementRoutes {
   Tabs = 'tabs',
   DataTable = 'data-table',
   Forms = 'forms',
+  Accordions = 'accordions'
 }
 
 export enum SettingRoutes {
