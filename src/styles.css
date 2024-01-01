@@ -175,7 +175,9 @@
   .form-select {
     @apply py-2 px-2 block w-full border border-gray-200 text-gray-900 text-sm rounded-md !outline-none input;
   }
-
+  .form-input-icon {
+    @apply absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none;
+  }
   label.required::after {
     content: "*";
     @apply ml-[3px] text-red-500;
@@ -186,8 +188,8 @@
   }
 
   input[type="file"]::file-selector-button {
-    @apply border-0 py-2 px-4 bg-blue-700 text-white hover:bg-blue-600 cursor-pointer transition-colors 
-  } 
+    @apply border-0 py-2 px-4 bg-blue-700 text-white hover:bg-blue-600 cursor-pointer transition-colors;
+  }
 }
 
 /*Additional Global Css Overrides*/

@@ -41,6 +41,33 @@
    </div>
    <div class="card p-5">
       <div class="card-title">
+         <h3 class="text-xl font-bold leading-none">Input element with icon</h3>
+      </div>
+      <div class="mt-5">
+         <form class="max-w-sm">
+            <label for="email-address-icon" class="form-label">Your
+               Email
+            </label>
+            <div class="relative">
+               <div class="form-input-icon">
+                  <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                     xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 16">
+                     <path
+                        d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+                     <path
+                        d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+                  </svg>
+               </div>
+               <input type="text" id="email-address-icon"
+                  class="form-control ps-10"
+                  placeholder="icon@email.com">
+            </div>
+         </form>
+
+      </div>
+   </div>
+   <div class="card p-5">
+      <div class="card-title">
          <h3 class="text-xl font-bold leading-none">Textarea</h3>
       </div>
       <div class="mt-5">
@@ -146,7 +173,7 @@
       <div class="mt-5">
          <form class="max-w-2xl p-4">
             <div class="grid grid-cols-12 gap-x-6 space-y-4">
-               <div class="col-span-12 md:col-span-8 ">
+               <div class="col-span-12 md:col-span-8 mb-4">
                   <div class="col-span-full">
                      <label for="cover-photo" class="block text-sm font-medium leading-6 text-gray-900">
                         Cover photo
@@ -197,10 +224,9 @@
                   </div>
                </div>
             </div>
-            <div class="mt-6 flex items-center justify-end gap-x-6">
+            <div class="mt-10 flex  gap-x-6">
                <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-               <button type="submit"
-                  class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+               <button type="submit" class="btn btn-primary btn-sm">Save</button>
             </div>
          </form>
 
