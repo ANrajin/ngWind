@@ -12,4 +12,7 @@ import { TableData } from '../data-table/table.data';
 })
 export class AdminPaginationComponent {
   public pages: number[] = TableData.pageNumber;
+  getPageIndex(index:number){
+    console.log(index);
+  }
 }
