@@ -1,0 +1,40 @@
+<!-- pagination.component.html -->
+    <nav class="ng-wind-table-pagination" aria-label="Table navigation">
+        <div class="ng-wind-table-page-view">
+           Rows per page:
+           <div class="flex  mx-2 rounded-md">
+              <select id="states" class="bg-gray-100  text-gray-900 
+               block w-full p-1 rounded-sm text-xs">
+                 <option value="10">10</option>
+                 <option value="20">20</option>
+                 <option value="50">50</option>
+                 <option value="100">100</option>
+                 <option value="200">200</option>
+                 <option value="300">300</option>
+                 <option value="400">400</option>
+              </select>
+           </div>
+           <span class="font-semibold text-gray-900  ms-4 me-1">1-10</span> of
+           <span class="font-semibold text-gray-900 ms-1">1000</span>
+        </div>
+
+        <ul class="inline-flex -space-x-px rtl:space-x-reverse text-xs h-8">
+           <li>
+              <a href="#" class="ng-wind-page-prev">
+                 Prev
+              </a>
+           </li>
+           @for (page of pages; track page){
+           <li>
+              <a (click)="changePage.emit(page)" aria-current="page" [ngClass]="page == currentPage ? 'active-page' : 'bg-white hover:bg-gray-100' "
+                 class="page-number">
+                 {{page}}
+              </a>
+           </li>
+           }
+           <li>
+              <a href="#" class="ng-wind-page-next ">Next</a>
+           </li>
+        </ul>
+     </nav>
+  
