@@ -38,7 +38,7 @@ export class DataTableComponent implements OnInit {
   @Input() defaultFilters: Filter[] = [];
   isLoading: boolean = true;
   currentPageIndex: number = 1;
-  totalRows: number = 0;
+  totalRows: number | null = null;
   sortColumns: SortOrder[] = [];
   filters: Filter[] = [];
   row$: Observable<any[]> = of([]);

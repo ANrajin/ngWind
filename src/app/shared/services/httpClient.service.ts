@@ -16,19 +16,19 @@ export class HttpClientService {
   }
 
   public get<T>(url: string): Observable<T> {
-    return this._http.get<T>(this.getUri(url));
+    return this._http.get<T>(url);
   }
 
   public post<T>(url: string, requestBody: any = null): Observable<T> {
-    return this._http.post<T>(this.getUri(url), requestBody);
+    return this._http.post<T>(url, requestBody);
   }
 
   public delete<T>(url: string): Observable<T> {
-    return this._http.delete<T>(this.getUri(url));
+    return this._http.delete<T>(url);
   }
 
   public put<T>(url: string, requestBody: any = null): Observable<T> {
-    return this._http.put<T>(this.getUri(url), requestBody);
+    return this._http.put<T>(url, requestBody);
   }
 
   private getUri = (endpoint: string) => this._hostUrl + endpoint;

@@ -18,10 +18,9 @@ export class DatatableColumn {
   public formatter?: (row: any) => string;
   public action?: (row: any) => void
 
-  constructor(title: string, name: string, isSortable: boolean, isHideAble: boolean = false, formatter?: (row: any) => any, action?: (row: any) => void) {
+  constructor(title: string, name: string, isHideAble: boolean = false, formatter?: (row: any) => any, action?: (row: any) => void) {
     this.title = title;
     this.name = name;
-    this.isSortable = isSortable;
     this.isHideAble = isHideAble;
     this.formatter = formatter;
     this.action = action;
