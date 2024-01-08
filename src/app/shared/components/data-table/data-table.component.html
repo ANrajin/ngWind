@@ -60,7 +60,8 @@
           </table>
         </div>
       </div>
-      <pagination (changePage)="changePage($event)"></pagination>
+      <pagination (changePage)="changePage($event)" [currentPage]="currentPageIndex" [total]="totalRows"
+        [pageSize]="pageSize"></pagination>
     </div>
   </div>
 </div>
