@@ -15,10 +15,6 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
   imports: [NgClass, NgIf, PaginationComponent, CommonModule, SafeHtmlPipe]
 })
 export class DataTableComponent implements OnInit {
-  @Input() columnData: any = [];
-  @Input() rowData: any = [];
-  @Input() pageData: number[] = [];
-
   shorting: boolean = false;
 
   sortingUp() {
