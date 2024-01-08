@@ -13,9 +13,8 @@ import { Datatable, DatatableColumn } from 'src/app/shared/components/data-table
 })
 export class AdminDataTableComponent {
   apiUrl: string = "api/v1/blood-groups/list"
-  pageSize: number = 3;
 
-  dtSetting: Datatable = new Datatable(this.pageSize, [
+  dtSetting: Datatable = new Datatable([
     new DatatableColumn('ID No', "id", true),
     new DatatableColumn('Name', "name", true),
     new DatatableColumn('Description', "description", false),

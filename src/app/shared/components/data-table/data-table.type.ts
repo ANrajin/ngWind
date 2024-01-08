@@ -1,10 +1,8 @@
 export class Datatable {
 
-  public pageSize: number = 10;
   public columns: DatatableColumn[] = [];
 
-  constructor(pageSize: number, columns: DatatableColumn[]) {
-    this.pageSize = pageSize;
+  constructor(columns: DatatableColumn[]) {
     this.columns = columns;
   }
 }

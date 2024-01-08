@@ -1,7 +1,6 @@
 import { NgClass, NgIf } from '@angular/common';
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { last } from 'rxjs';
 
 @Component({
   selector: 'pagination',
@@ -16,7 +15,7 @@ export class PaginationComponent {
    @Input() total: number =55;
 
    @Output()
-   changePage = new EventEmitter<number>();
+   changePage = new EventEmitter<{ pageSize: number, currentPage: number }>();
 
    firstPage:number = 1;
    pageDifference: number = 5;
@@ -27,6 +26,11 @@ export class PaginationComponent {
 
    ngOnInit(): void{
       this.preparePages();
+   }
+
+   onChangePageSize(event: any){
+    this.pageSize = event.target.value;
+    this.preparePages();
    }
 
    getPageCount():number{
@@ -80,7 +84,7 @@ export class PaginationComponent {
    }
 
    preparePages(){
-    this.changePage.emit(this.currentPage);
+    this.changePage.emit({pageSize: this.pageSize, currentPage:this.currentPage});
     const ranges: number[] = this.range(this.firstPage, (this.generateLastPage()-this.firstPage)+1);
     this.pages = [];
     this.pages = ranges.map(x =>{

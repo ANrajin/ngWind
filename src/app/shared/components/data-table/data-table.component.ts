@@ -24,18 +24,20 @@ export class DataTableComponent implements OnInit {
     this.shorting = !this.shorting;
   }
 
-  changePage(currentPage: number) {
-    if (currentPage) {
-      this.currentPageIndex = currentPage;
+  changePage(event:{pageSize:number, currentPage: number}) {
+    if (event) {
+      this.currentPageIndex = event.currentPage;
+      this.pageSize = event.pageSize;
       this.loadTable();
     }
   }
 
   @Input() url!: string;
-  @Input() setting: Datatable = new Datatable(10, []);
-  @Input() pageSize: number = 10;
+  @Input() setting: Datatable = new Datatable([]);
   @Input() mode: number = 1;
   @Input() defaultFilters: Filter[] = [];
+
+  pageSize: number = 10;
   isLoading: boolean = true;
   currentPageIndex: number = 1;
   totalRows: number | null = null;
