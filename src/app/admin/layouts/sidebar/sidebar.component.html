@@ -63,6 +63,13 @@
                 </li>
                 <li>
                     <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Pagination)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Pagination</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item"
                         [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.DataTable)"
                         routerLinkActive="active" ariaCurrentWhenActive="page">
                         <span>Data Table</span>

@@ -11,6 +11,7 @@ export enum ElementRoutes {
   Buttons = 'buttons',
   Tabs = 'tabs',
   DataTable = 'data-table',
+  Pagination = 'pagination',
   Forms = 'forms',
 }
 
