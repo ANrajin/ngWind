@@ -62,7 +62,7 @@ export class DataTableComponent implements OnInit {
     return column != null;
   }
 
-  onAdvanceSearch(filters: FilterColumn[]) {
+  public onAdvanceSearch(filters: FilterColumn[]) {
     this.defaultFilters = filters;
     this.currentPageIndex = 1;
     this.loadTable();
