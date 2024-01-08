@@ -8,11 +8,11 @@ import { HttpClientService } from '../../services/httpClient.service';
 import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 
 @Component({
-    selector: 'data-table',
-    standalone: true,
-    templateUrl: './data-table.component.html',
-    styleUrl: './data-table.component.css',
-    imports: [NgClass, NgIf, PaginationComponent,CommonModule,SafeHtmlPipe]
+  selector: 'data-table',
+  standalone: true,
+  templateUrl: './data-table.component.html',
+  styleUrl: './data-table.component.css',
+  imports: [NgClass, NgIf, PaginationComponent, CommonModule, SafeHtmlPipe]
 })
 export class DataTableComponent implements OnInit {
   @Input() columnData: any = [];
@@ -60,7 +60,7 @@ export class DataTableComponent implements OnInit {
   onSort(name: string, order: SortOrderType) {
     this.sortColumns = [
       {
-        name: name.toPascalCase(),
+        name: name.toLowerCase(),
         order: order
       }
     ];
