@@ -26,10 +26,10 @@ export class AdminDataTableComponent {
 
   dtSetting: Datatable = new Datatable([
     new DatatableColumn('ID No', "id", "20%", true, true),
-    new DatatableColumn('Name', "name", "50%", true, true),
+    new DatatableColumn('Name', "name", "20%", true, true),
     new DatatableColumn('Description', "description", "20%", true, true),
-    new DatatableColumn('Status', "status", "10%", true, false, (row) => this.prepare(row)),
-  ]);
+    new DatatableColumn('Status', "status", "40%", false, false, (row) => this.prepare(row)),
+  ], "Custom Table");
 
   @ViewChild(DataTableComponent) datatable?: DataTableComponent;
 
