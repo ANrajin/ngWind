@@ -1,21 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { pageTransition } from "../../../../shared/utils/animations";
-import { TabContents } from "../../../../shared/components/tab/tab-contents.type";
 import { tabItems } from "./tab-items";
-import { TabModule } from 'src/app/shared/components/tab/tab.module';
+import { NgwTabComponent } from 'src/app/shared/components/ngw-tab/ngw-tab.component';
+import { NgwTabContents } from 'src/app/shared/components/ngw-tab/ngw-tab-contents.type';
 
 @Component({
   selector: 'admin-tab',
   standalone: true,
   imports: [
     CommonModule,
-    TabModule
+    NgwTabComponent
   ],
   templateUrl: './admin-tab.component.html',
   styleUrl: './admin-tab.component.css',
   animations: [pageTransition],
 })
 export class AdminTabComponent {
-  items: TabContents[] = tabItems;
+  items: NgwTabContents[] = tabItems;
 }

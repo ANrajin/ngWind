@@ -1,4 +1,4 @@
-export type TabContents = {
+export interface NgwTabContents {
     Title: string;
     IsActive?: boolean;
     IsDisabled?: boolean;

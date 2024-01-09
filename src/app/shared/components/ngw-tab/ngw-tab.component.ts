@@ -1,14 +1,22 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { TabContents } from "./tab-contents.type";
+import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { NgwTabContents } from './ngw-tab-contents.type';
+import { NgFor, NgIf } from '@angular/common';
+import { NgwTabModule } from './directives/ngw-tab.module';
 
 @Component({
-  selector: 'app-tab',
-  templateUrl: './tab.component.html',
-  styleUrl: './tab.component.css',
+  selector: 'ngw-tab',
+  standalone: true,
+  imports: [
+    NgIf,
+    NgFor,
+    NgwTabModule
+  ],
+  templateUrl: './ngw-tab.component.html',
+  styleUrl: './ngw-tab.component.css',
   encapsulation: ViewEncapsulation.None,
 })
-export class TabComponent implements OnInit {
-  @Input() items: TabContents[] = [];
+export class NgwTabComponent {
+  @Input() items: NgwTabContents[] = [];
   protected title: string = "";
   protected content: string = "";
 

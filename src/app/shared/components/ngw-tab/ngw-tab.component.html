@@ -1,0 +1,24 @@
+<div>
+    @if (items.length > 0) {
+    <ul ngwTab>
+        @for (item of items; track $index) {
+        <li ngwTabItem>
+            <a href="javascript:void(0)" [attr.aria-current]="item.IsActive ? 'true': 'false'"
+                [attr.aria-disabled]="item.IsDisabled ? 'true': 'false'" [attr.aria-valuenow]="$index"
+                (index)="handleIndex($event)" ngwTabLink>
+                {{item.Title}}
+            </a>
+        </li>
+        }
+    </ul>
+    <div ngwTabContent>
+        <div ngwTabBody>
+            <h3 ngwTabTitle *ngIf="title">{{title}}</h3>
+            <p>{{content}}</p>
+        </div>
+    </div>
+    }
+    @else {
+    <ng-content></ng-content>
+    }
+</div>

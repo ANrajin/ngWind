@@ -1,6 +1,6 @@
-import { TabContents } from "../../../../shared/components/tab/tab-contents.type";
+import { NgwTabContents } from "src/app/shared/components/ngw-tab/ngw-tab-contents.type";
 
-export const tabItems: TabContents[] = [
+export const tabItems: NgwTabContents[] = [
     {
         Title: "Profile",
         IsActive: true,

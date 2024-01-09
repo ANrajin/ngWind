@@ -1,25 +1,17 @@
-import {
-  Directive,
-  ElementRef,
-  EventEmitter,
-  HostListener,
-  OnInit,
-  Output,
-  Renderer2,
-} from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, OnInit, Output, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appTabLink]',
+  selector: '[ngwTabLink]',
   standalone: true
 })
-export class TabLinkDirective implements OnInit {
+export class NgwTabLinkDirective implements OnInit {
 
   @Output() index: EventEmitter<number> = new EventEmitter<number>();
 
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.addClass(this.elementRef.nativeElement, 'nav-link')
+    this.renderer.addClass(this.elementRef.nativeElement, 'ngw-tab-link')
   }
 
   @HostListener('click', ['$event.target']) onClick(elem: Element) {
