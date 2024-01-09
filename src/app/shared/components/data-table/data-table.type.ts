@@ -13,7 +13,16 @@ export class Datatable {
 export class DatatableAction {
   public title: string = '';
   public class: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | '' = '';
-  public action?: (row: any) => void
+  public action?: (row: any) => void;
+
+  constructor(
+    title: string,
+    color: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info' | '' = '',
+    callback: (row: any) => void) {
+    this.title = title;
+    this.class = color;
+    this.action = callback;
+  }
 }
 
 export class DatatableColumn {

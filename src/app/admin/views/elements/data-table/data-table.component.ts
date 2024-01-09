@@ -2,7 +2,7 @@ import { NgClass } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { DataTableComponent } from 'src/app/shared/components/data-table/data-table.component';
 import { IColumn, IProduct, TableData } from './table.data';
-import { Datatable, DatatableColumn } from 'src/app/shared/components/data-table/data-table.type';
+import { Datatable, DatatableAction, DatatableColumn } from 'src/app/shared/components/data-table/data-table.type';
 import { FilterColumn, OperatorType } from 'src/app/shared/components/data-table/paging.type';
 
 @Component({
@@ -28,10 +28,18 @@ export class AdminDataTableComponent {
     new DatatableColumn('ID No', "id", "20%", true, true),
     new DatatableColumn('Name', "name", "20%", true, true),
     new DatatableColumn('Description', "description", "20%", true, true),
-    new DatatableColumn('Status', "status", "40%", false, false, (row) => this.prepare(row)),
+    new DatatableColumn('Action', "status", "40%", false, false, (row) => this.prepare(row),undefined,
+      [
+        new DatatableAction("Actions", 'primary', (x) => this.hitAction(x)),
+      ]
+    ),
   ], "Custom Table");
 
   @ViewChild(DataTableComponent) datatable?: DataTableComponent;
+
+  hitAction(x: any) {
+
+  }
 
   onSearch(filters: FilterColumn[]) {
     this.datatable?.onAdvanceSearch(filters);
