@@ -13,27 +13,27 @@ import { FilterColumn, OperatorType } from 'src/app/shared/components/data-table
   styleUrl: './data-table.component.css',
 })
 export class AdminDataTableComponent {
-  filters:FilterColumn[] = [
-    {
-      filterBy: "Name",
-      value: "A positive",
-      operator: OperatorType.Contains,
-      isGenericValue: false
-    }
+  filters: FilterColumn[] = [
+    // {
+    //   filterBy: "Name",
+    //   value: "A positive",
+    //   operator: OperatorType.Contains,
+    //   isGenericValue: false
+    // }
   ]
 
   apiUrl: string = "api/v1/blood-groups/list"
 
   dtSetting: Datatable = new Datatable([
-    new DatatableColumn('ID No', "id", true, true),
-    new DatatableColumn('Name', "name", true, true),
-    new DatatableColumn('Description', "description", true, true),
-    new DatatableColumn('Status', "status", true,false, (row) => this.prepare(row)),
+    new DatatableColumn('ID No', "id", "20%", true, true),
+    new DatatableColumn('Name', "name", "50%", true, true),
+    new DatatableColumn('Description', "description", "20%", true, true),
+    new DatatableColumn('Status', "status", "10%", true, false, (row) => this.prepare(row)),
   ]);
 
   @ViewChild(DataTableComponent) datatable?: DataTableComponent;
 
-  onSearch(filters: FilterColumn[]){
+  onSearch(filters: FilterColumn[]) {
     this.datatable?.onAdvanceSearch(filters);
   }
 

@@ -9,27 +9,18 @@
           <table class="ng-wind-table relative">
             <thead class="ng-wind-table-header">
               <tr>
-                <th scope="col" class="ng-wind-header-item" [class.hidden]="!column.isHideAble"
-                  *ngFor="let column of setting.columns">
+                <th scope="col" class="ng-wind-header-item border" [class.hidden]="!column.isHideAble"
+                  *ngFor="let column of setting.columns" [width]="column.width">
                   <div class="flex items-center">
                     {{column.title}}
-                    <!-- <span
-        *ngIf="column.isSortable"
-        class="sort-column"
-        (click)="onSort(column.name, 1)"
-        [ngClass]="isSortActive(column.name, 1) ? 'sort-active' : ''">▼</span>
-      <span
-        *ngIf="column.isSortable"
-        class="sort-column"
-        (click)="onSort(column.name, 2)"
-        [ngClass]="isSortActive(column.name, 2) ? 'sort-active' : ''">▲</span> -->
-                  <div *ngIf="column.isSortable">
-                    <button (click)="onSort(column.name, isSortActive(column.name, 1) ?2:1)" *ngIf="shorting === false"
-                      class="ml-2 text-lg ">
-                      <i [ngClass]="isSortActive(column.name, 1) ? 'bi bi-arrow-down-short' : 'bi bi-arrow-up-short'"></i>
-                    </button>
-                  </div>
-                  
+                    <div *ngIf="column.isSortable">
+                      <button (click)="onSort(column.name, isSortActive(column.name, 1) ?2:1)"
+                        *ngIf="shorting === false" class="ml-2 text-lg ">
+                        <i
+                          [ngClass]="isSortActive(column.name, 1) ? 'bi bi-arrow-down-short' : 'bi bi-arrow-up-short'"></i>
+                      </button>
+                    </div>
+
                   </div>
                 </th>
               </tr>
@@ -55,8 +46,8 @@
               @for (row of row$ | async; track row?.id){
               <tr class="bg-white border-b  hover:bg-gray-50">
                 <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap"
-                  [class.hidden]="!column.isHideAble" *ngFor="let column of setting.columns">
-                  <span *ngIf="column.formatter == null">{{row[column.name]}}</span>
+                  [class.hidden]="!column.isHideAble" *ngFor="let column of setting.columns" [width]="column.width">
+                  <span style="text-wrap: wrap;" *ngIf="column.formatter == null">{{row[column.name]}}</span>
                   <div *ngIf="column.formatter && column.action" (click)="column.action(row)"
                     [innerHTML]="column.formatter(row) | safeHtml"></div>
                   <div *ngIf="column.formatter && !column.action" [innerHTML]="column.formatter(row) | safeHtml"></div>
