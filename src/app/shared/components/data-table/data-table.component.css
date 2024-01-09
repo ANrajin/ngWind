@@ -4,6 +4,7 @@
     height: 350px;
     max-height: 412px;
     overflow: auto;
+    width: 100%
   }
   th {
     @apply bg-slate-50;
@@ -80,3 +81,16 @@
 .page-number-show-dropdown:focus {
   border: 0 !important;
 }
+
+.admin-navbar {
+  z-index: 10;
+}
+
+.data-dropdown-list {
+  @apply z-10 absolute top-9 -right-3 mt-2 flex w-32 flex-col gap-3 rounded-xl bg-white border border-slate-200/30 p-4
+                                    shadow-lg transition ease-in-out duration-150;
+}
+/* 
+.profile-dropdown-list[aria-expanded="false"] {
+  @apply invisible scale-90 opacity-0;
+} */
