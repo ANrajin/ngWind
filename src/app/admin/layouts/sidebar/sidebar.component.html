@@ -6,10 +6,6 @@
                 <span class="text-2xl">NGWIND</span>
             </h1>
         </a>
-        <button type="button" class="bg-slate-700 px-1 rounded hover:text-emerald-600 transition ease-in-out"
-            (click)="sidebarCollapsedHandler()">
-            <i class="bi" [ngClass]="sidebarIsCollapsed ? 'bi-arrow-left-short' : 'bi-arrow-right-short'"></i>
-        </button>
     </div>
     <ul class="menu-links">
         <li>
@@ -42,8 +38,8 @@
                 </li>
                 <li>
                     <a class="menu-item"
-                       [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Tabs)"
-                       routerLinkActive="active" ariaCurrentWhenActive="page">
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Tabs)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
                         <span>Tabs</span>
                     </a>
                 </li>
@@ -113,3 +109,14 @@
         </li>
     </ul>
 </aside>
+
+<div class="collapsible-btn-container">
+    <button id="sidebar-collapse-btn" sidebarCollapse>
+        <div class="w-6 h-16 flex justify-center items-center">
+            <div class="collapsible-icons">
+                <div class="collapsible-top-icon"></div>
+                <div class="collapsible-bottom-icon"></div>
+            </div>
+        </div>
+    </button>
+</div>

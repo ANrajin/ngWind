@@ -8,10 +8,10 @@
 }
 
 .sidebar[aria-expanded=false] {
-    @apply w-14 overflow-hidden
+    @apply w-0 p-0 overflow-hidden
 }
 
-.brand-wrapper{
+.brand-wrapper {
     @apply flex items-center min-h-[2rem] justify-between
 }
 
@@ -36,11 +36,11 @@ app-sidebar[aria-expanded="false"] .brand {
     @apply inline-flex w-full gap-x-2 items-center px-2 py-1 text-gray-500 transition duration-300 ease-in-out rounded overflow-hidden
 }
 
-.menu-item span{
+.menu-item span {
     @apply text-sm
 }
 
-.sidebar[aria-expanded=false] .menu-links .menu-item span{
+.sidebar[aria-expanded=false] .menu-links .menu-item span {
     @apply hidden
 }
 
@@ -88,4 +88,49 @@ app-sidebar[aria-expanded="false"] .brand {
 
 .sub-menu[aria-expanded=true]+.sub-menu-item {
     @apply !max-h-96
+}
+
+.collapsible-top-icon,
+.collapsible-bottom-icon {
+    @apply transition-all duration-100 ease-in-out
+}
+
+.collapsible-btn-container {
+    @apply fixed left-0 top-1/2 translate-x-[15rem] transition-all duration-300
+}
+
+.collapsible-top-icon {
+    @apply bg-slate-400 h-4 w-1 translate-y-[0.15rem] rounded-full
+}
+
+.collapsible-bottom-icon {
+    @apply bg-slate-400 h-4 w-1 translate-y-[-0.15rem] rounded-full
+}
+
+#sidebar-collapse-btn:hover .collapsible-top-icon {
+    @apply bg-slate-800
+}
+
+#sidebar-collapse-btn:hover .collapsible-bottom-icon {
+    @apply bg-slate-800
+}
+
+.sidebar[aria-expanded=false] .collapsible-btn-container {
+    @apply translate-x-[0.3rem]
+}
+
+.sidebar[aria-expanded=false] .collapsible-btn-container .collapsible-top-icon {
+    @apply rotate-[-15deg]
+}
+
+.sidebar[aria-expanded=false] .collapsible-btn-container .collapsible-bottom-icon {
+    @apply rotate-[15deg]
+}
+
+.sidebar[aria-expanded=true] #sidebar-collapse-btn:hover .collapsible-top-icon {
+    @apply rotate-[15deg]
+}
+
+.sidebar[aria-expanded=true] #sidebar-collapse-btn:hover .collapsible-bottom-icon {
+    @apply rotate-[-15deg]
 }

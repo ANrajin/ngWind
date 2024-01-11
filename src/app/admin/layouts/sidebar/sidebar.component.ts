@@ -48,20 +48,6 @@ export class SidebarComponent implements OnInit, AfterViewInit, OnDestroy {
     this.routerSubscription.unsubscribe();
   }
 
-  sidebarCollapsedHandler = (): void => {
-    this.sidebarIsCollapsed = !this.sidebarIsCollapsed;
-    this.sidebarCollapsed.emit(this.sidebarIsCollapsed);
-
-    const subMenu = this.elementRef.nativeElement.querySelectorAll(".sub-menu");
-
-    subMenu.forEach((subMenu: Element) => {
-      if (subMenu.getAttribute('aria-expanded') == 'true')
-        subMenu.setAttribute('aria-expanded', 'false');
-
-      subMenu.toggleAttribute('icon-hidden');
-    });
-  }
-
   subMenuToggleHandler = (event: MouseEvent): void => {
     const elem = event.target as HTMLElement;
     const subMenu = elem.closest("a.sub-menu") as Element;
