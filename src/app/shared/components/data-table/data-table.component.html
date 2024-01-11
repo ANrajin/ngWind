@@ -1,172 +1,88 @@
-<div class="container">
-   <div class="card p-5 ">
-      <div class="card-title">
-         <h3 class="text-xl font-bold leading-none mb-8">Table</h3>
-      </div>
-      <div class="mt-3">
-         <div class=" sm:rounded-lg">
-            <div class="data-table">
-               <div class="table-container">
-                  <table class="ng-wind-table relative">
-                     <thead class="ng-wind-table-header">
-                        <tr>
-                           <th scope="col" class="ng-wind-header-item">
-                              Product name
-                              <button (click)="sortingUp()" *ngIf="shorting === false" class="ml-2 text-lg ">
-                                 <i class="bi bi-arrow-down-short"></i>
-                              </button>
-                              <button (click)="sortingDown()" *ngIf="shorting === true" class="ml-2 text-lg">
-                                 <i class="bi bi-arrow-up-short"></i>
-                              </button>
-                           </th>
-                           <th scope="col" class="ng-wind-header-item">
-                              Color
-                           </th>
-                           <th scope="col" class="ng-wind-header-item">
-                              Category
-                           </th>
-                           <th scope="col" class="ng-wind-header-item">
-                              Price
-                           </th>
-                           <th scope="col" class="ng-wind-header-item text-center">
-                              Action
-                           </th>
-                        </tr>
-                     </thead>
-   
-                     @if( rowData.length == 0 || rowData.length == undefined){
-                     <div class=" text-center  w-full absolute top-52 ">
-                        <button disabled type="button"
-                           class="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700   inline-flex items-center">
-                           <svg aria-hidden="true" role="status"
-                              class="inline w-4 h-4 me-3 text-gray-200 animate-spin dark:text-gray-600"
-                              viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path
-                                 d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
-                                 fill="currentColor" />
-                              <path
-                                 d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
-                                 fill="#1C64F2" />
-                           </svg>
-                           Loading...
-                        </button>
-                     </div>
-                     } @else {
-                     <tbody>
-                        @for (product of rowData; track product?.id){
-                        <tr class="bg-white border-b  hover:bg-gray-50">
-                           <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap " >
-                              {{product?.name}}
-                           </td>
-                           <td class="ng-wind-data-item">
-                              {{product?.color}}
-                           </td>
-                           <td class="ng-wind-data-item">
-                              {{product?.category}}
-                           </td>
-                           <td class="ng-wind-data-item">
-                              {{product?.price}}
-                           </td>
-                           <td class="ng-wind-data-item text-center w-20">
-                              <div class="relative table-dropdown">
-                                 <button (click)="openDropdown()"
-                                    class="p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none"
-                                    type="button">
-                                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                       fill="currentColor" viewBox="0 0 16 3">
-                                       <path
-                                          d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
-                                    </svg>
-                                 </button>
-                                 <div class="z-10 absolute top-9 -right-3 mt-2 flex w-32 flex-col gap-3 rounded-xl bg-white border border-slate-200/30 p-4
-                                    shadow-lg transition ease-in-out duration-150"
-                                    [ngClass]="!isOpenDropdown ? 'hidden': ''">
-                                    <ul class="py-2 text-sm text-gray-700 ">
-                                       <li (click)="openDropdown()">
-                                          <a  routerLink="/admin/elements/modal"
-                                             class="block px-4 py-2 hover:bg-gray-100" [ngClass]="!isOpenDropdown ? 'hidden': ''">Dashboard
-                                          </a>
-                                       </li>
-                                       <li>
-                                          <a href="#"
-                                             class="block px-4 py-2 hover:bg-gray-100 " [ngClass]="!isOpenDropdown ? 'hidden': ''">Settings</a>
-                                       </li>
-                                       <li>
-                                          <a href="#"
-                                             class="block px-4 py-2 hover:bg-gray-100" [ngClass]="!isOpenDropdown ? 'hidden': ''">Earnings</a>
-                                       </li>
-                                    </ul>
-                                    
-                                 </div>
-                              </div>
-                              <!-- <div class="relative inline-block profile-dropdown">
-                                 <div class="flex items-center">
-                                    <button type="button" (click)="onClickProfile()"
-                                       class="flex w-10 h-10 overflow-hidden">
-                                       <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
-                                          <path
-                                             d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z" />
-                                       </svg>
-                                    </button>
-                                 </div>
-                              
-                                 <div class="profile-dropdown-list" aria-expanded="false">
-                                    <ul class="py-2 text-sm text-gray-700 " aria-labelledby="dropdownMenuIconHorizontalButton">
-                                       
-                                       <li>
-                                          <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
-                                       </li>
-   
-                                    </ul>
-                                 </div>
-                              </div> -->
-                           </td>
-                        </tr>
-                        }
-                     </tbody>
-                     }
-                  </table>
-               </div>
-            </div>
-            <nav class="ng-wind-table-pagination" aria-label="Table navigation">
-               <div class="ng-wind-table-page-view">
-                  Rows per page:
-                  <div class="flex  mx-2 rounded-md">
-                     <select id="states" class="bg-gray-100  text-gray-900 
-                      block w-full p-1 rounded-sm text-xs">
-                        <option value="10">10</option>
-                        <option value="20">20</option>
-                        <option value="50">50</option>
-                        <option value="100">100</option>
-                        <option value="200">200</option>
-                        <option value="300">300</option>
-                        <option value="400">400</option>
-                     </select>
+<div class="card p-5 ">
+  <div class="card-title">
+    <h3 class="text-xl font-bold leading-none mb-8">{{setting.tableName}}</h3>
+  </div>
+  <div class="mt-3">
+    <div class=" sm:rounded-lg">
+      <div class="data-table">
+        <div class="table-container">
+          <table class="ng-wind-table relative">
+            <thead class="ng-wind-table-header">
+              <tr>
+                <th scope="col" class="ng-wind-header-item border" *ngFor="let column of setting.columns"
+                  [width]="column.utils.width">
+                  <div class="flex items-center" [ngClass]="column.utils.align ? column.utils.align : '' ">
+                    {{column.title}}
+                    <div *ngIf="column.isSortable">
+                      <button (click)="onSort(column.name, isSortActive(column.name, 1) ?2:1)"
+                        *ngIf="shorting === false" class="ml-2 text-lg ">
+                        <i
+                          [ngClass]="isSortActive(column.name, 1) ? 'bi bi-arrow-down-short' : 'bi bi-arrow-up-short'"></i>
+                      </button>
+                    </div>
                   </div>
-                  <span class="font-semibold text-gray-900  ms-4 me-1">1-10</span> of
-                  <span class="font-semibold text-gray-900 ms-1">1000</span>
-               </div>
-   
-               <ul class="inline-flex -space-x-px rtl:space-x-reverse text-xs h-8">
-                  <li>
-                     <a href="#" class="ng-wind-page-prev">
-                        Prev
-                     </a>
-                  </li>
-                  @for (page of pageData; track page){
-                  <li>
-                     <a href="#" aria-current="page" [ngClass]="page == 4 ? 'active-page' : 'bg-white hover:bg-gray-100' "
-                        class="page-number">
-                        {{page}}
-                     </a>
-                  </li>
-                  }
-                  <li>
-                     <a href="#" class="ng-wind-page-next ">Next</a>
-                  </li>
-               </ul>
-            </nav>
-         </div>
+                </th>
+              </tr>
+            </thead>
+            <div class=" text-center  w-full absolute top-52" *ngIf="isLoading">
+              <button type="button"
+                class="inline-flex items-center px-4 py-1 font-normal leading-6 text-sm shadow rounded-md bg-purple-100 text-purple-800 transition ease-in-out duration-150 cursor-not-allowed"
+                disabled="">
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-purple-800" xmlns="http://www.w3.org/2000/svg"
+                  fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                  </path>
+                </svg>
+                Loading...
+              </button>
+            </div>
+            <div class=" text-center  w-full absolute top-52" *ngIf="isError">
+              <div
+                class="flex items-center justify-between mx-auto w-[190px]  py-2 px-3 bg-rose-50 rounded-lg shadow-sm">
+                <div
+                  class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 text-red-500 bg-red-200 rounded-lg ">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                    viewBox="0 0 20 20">
+                    <path
+                      d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z" />
+                  </svg>
+                  <span class="sr-only">Error icon</span>
+                </div>
+                <div class="text-sm font-normal text-red-600">Data fetching error</div>
+              </div>
+            </div>
+            <tbody *ngIf="!isLoading">
+              @for (row of row$ | async; track row?.id){
+              <tr class="bg-white border-b  hover:bg-gray-50">
+                @for(column of setting.columns; track column?.action){
+                <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap" [width]="column.utils.width"
+                  *ngIf="column.isAction">
+                  <span style="text-wrap: wrap;" *ngIf="column.formatter == null">{{row[column.name]}}</span>
+                  <div *ngIf="column.formatter && column.action" (click)="column.action(row)"
+                    [innerHTML]="column.formatter(row) | safeHtml"></div>
+                  <div *ngIf="column.formatter && !column.action" [innerHTML]="column.formatter(row) | safeHtml"></div>
+                </td>
+                <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap " [width]="column.utils.width"
+                  *ngIf="!column.isAction">
+                  <div class=" align-middle">
+                    @for(action of column.actions; track action){
+                    <button type="button" class="btn btn-{{action.class}} me-2 btn-xs " (click)="action?.action(row)">
+                      {{action.title}}
+                    </button>
+                    }
+                  </div>
+                </td>
+                }
+              </tr>
+              }
+            </tbody>
+          </table>
+        </div>
       </div>
-   </div>
+      <pagination *ngIf="totalRows" (changePage)="changePage($event)" [currentPage]="currentPageIndex"
+        [total]="totalRows" [pageSize]="pageSize"></pagination>
+    </div>
+  </div>
 </div>

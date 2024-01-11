@@ -1,0 +1,42 @@
+<!-- pagination.component.html -->
+    <nav class="ng-wind-table-pagination" aria-label="Table navigation">
+        <div class="ng-wind-table-page-view">
+         Rows per page:
+         <div class="flex  mx-2 rounded-md">
+            <select id="states" class="bg-gray-100  text-gray-900 
+             block w-full p-1 rounded-sm text-xs" (change)="onChangePageSize($event)">
+               <option value="05">5</option>
+               <option value="10" selected>10</option>
+               <option value="20">20</option>
+               <option value="50">50</option>
+               <option value="100">100</option>
+               <option value="200">150</option>
+               <option value="300">200</option>
+               <option value="400">250</option>
+            </select>
+         </div>
+         <span class="font-semibold text-gray-900  ms-4 me-1">
+            {{((currentPage-1)*pageSize)+1}}-{{((currentPage-1)*pageSize)+pageSize>total?total:
+            ((currentPage-1)*pageSize)+pageSize}}</span> of
+         <span class="font-semibold text-gray-900 ms-1">{{total}}</span>
+        </div>
+
+        <ul class="inline-flex -space-x-px rtl:space-x-reverse text-xs h-8">
+           <li>
+              <button (click)="goToPrevPage()" class="ng-wind-page-prev">
+                 Prev
+              </button>
+           </li>
+           @for (page of pages; track page){
+           <li>
+              <button  aria-current="page" [ngClass]="page.isActive ? 'active-page' : 'bg-white hover:bg-gray-100' "
+                 class="page-number" (click)="setCurrentPage(page)">
+                 {{page.pageNumber}}
+           </button>
+           </li>
+           }
+           <li>
+              <button (click)="goToNextPage()" class="ng-wind-page-next">Next</button>
+           </li>
+        </ul>
+     </nav>
