@@ -2,7 +2,7 @@ import { CommonModule, NgClass, NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { PaginationComponent } from "../pagination/pagination.component";
 import { Datatable } from './data-table.type';
-import { AdvanceSearchRequest, Filter, GeneralSearchRequest, IPagingSearchRequest, PaginateResult, SortOrder, SortOrderType } from './paging.type';
+import { AdvanceSearchRequest, Filter, FilterColumn, GeneralSearchRequest, IPagingSearchRequest, PaginateResult, SortOrder, SortOrderType } from './paging.type';
 import { Observable, finalize, of } from 'rxjs';
 import { HttpClientService } from '../../services/httpClient.service';
 import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
@@ -17,46 +17,42 @@ import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 export class DataTableComponent implements OnInit {
   shorting: boolean = false;
 
-  sortingUp() {
-    this.shorting = !this.shorting;
-  }
-  sortingDown() {
-    this.shorting = !this.shorting;
-  }
-
-  changePage(currentPage: number) {
-    if (currentPage) {
-      this.currentPageIndex = currentPage;
+  changePage(event:{pageSize:number, currentPage: number}) {
+    if (event) {
+      this.currentPageIndex = event.currentPage;
+      this.pageSize = event.pageSize;
       this.loadTable();
     }
   }
 
   @Input() url!: string;
-  @Input() setting: Datatable = new Datatable(10, []);
-  @Input() pageSize: number = 10;
-  @Input() mode: number = 1;
-  @Input() defaultFilters: Filter[] = [];
+  @Input() setting: Datatable = new Datatable([]);
+  @Input() defaultFilters: FilterColumn[] = [];
+
+  pageSize: number = 10;
   isLoading: boolean = true;
   currentPageIndex: number = 1;
-  totalRows: number = 0;
+  totalRows: number | null = null;
   sortColumns: SortOrder[] = [];
-  filters: Filter[] = [];
   row$: Observable<any[]> = of([]);
   generalSearchValue: string = "";
+  isError:boolean = false 
 
   constructor(
     private httpClientService: HttpClientService) {
+      console.log(this.isError)
 
   }
 
   ngOnInit(): void {
     this.loadTable();
+    
   }
 
   onSort(name: string, order: SortOrderType) {
     this.sortColumns = [
       {
-        name: name.toLowerCase(),
+        sortBy: name.toLowerCase(),
         order: order
       }
     ];
@@ -64,12 +60,12 @@ export class DataTableComponent implements OnInit {
   }
 
   isSortActive(name: string, order: SortOrderType) {
-    const column = this.sortColumns.find(x => x.name.toLowerCase() == name.toLowerCase() && x.order == order);
+    const column = this.sortColumns.find(x => x.sortBy.toLowerCase() == name.toLowerCase() && x.order == order);
     return column != null;
   }
 
-  onAdvanceSearch(filters: Filter[]) {
-    this.filters = filters;
+  public onAdvanceSearch(filters: FilterColumn[]) {
+    this.defaultFilters = filters;
     this.currentPageIndex = 1;
     this.loadTable();
   }
@@ -82,7 +78,6 @@ export class DataTableComponent implements OnInit {
 
   reloadTable() {
     this.currentPageIndex = 1;
-    this.filters = [];
     this.generalSearchValue = '';
     this.loadTable();
   }
@@ -91,28 +86,27 @@ export class DataTableComponent implements OnInit {
     let request: IPagingSearchRequest = {
       pageIndex: this.currentPageIndex,
       pageSize: this.pageSize,
-      orders: this.sortColumns
+      sortOrders: this.sortColumns
     };
-    if (this.mode == 1) {
-      request = new GeneralSearchRequest(
-        request.pageIndex,
-        request.pageSize,
-        request.orders,
-        this.generalSearchValue);
-    } else {
+
       request = new AdvanceSearchRequest(
         request.pageIndex,
         request.pageSize,
-        request.orders,
-        [...this.defaultFilters, ...this.filters]);
-    }
-    this.isLoading = true;
+        request.sortOrders,
+        this.defaultFilters);
+        
     this.httpClientService.post<PaginateResult<any>>(this.url, request)
-      .pipe(finalize(() => this.isLoading = false))
-      .subscribe(response => {
-        if (response) {
-          this.row$ = of(response.items);
-          this.totalRows = response.totalFiltered;
+      .pipe()
+      .subscribe({
+        next:(response) => {
+          if (response) {
+            this.row$ = of(response.items);
+            this.totalRows = response.totalFiltered;
+            this.isLoading = false;
+          }
+        }, error:(err)=>{
+          this.isError = !this.isError
+          this.isLoading = false;
         }
       });
   }

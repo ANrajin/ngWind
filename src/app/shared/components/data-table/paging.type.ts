@@ -22,7 +22,7 @@ export enum SortOrderType {
 }
 
 export interface SortOrder {
-  name: string;
+  sortBy: string;
   order: SortOrderType
 }
 
@@ -35,7 +35,7 @@ export interface FilterColumn {
   filterBy: string;
   operator: OperatorType;
   value: string;
-  type: FilterType;
+  isGenericValue: boolean;
 }
 
 export enum FilterType {
@@ -47,14 +47,14 @@ export enum FilterType {
 export interface IPagingSearchRequest {
   pageIndex: number,
   pageSize: number,
-  orders: SortOrder[]
+  sortOrders: SortOrder[]
 }
 
 export class GeneralSearchRequest implements IPagingSearchRequest {
   constructor(
     public pageIndex: number,
     public pageSize: number,
-    public orders: SortOrder[] = [],
+    public sortOrders: SortOrder[] = [],
     public searchText: string | null = null) {
   }
 }
@@ -63,8 +63,8 @@ export class AdvanceSearchRequest implements IPagingSearchRequest {
   constructor(
     public pageIndex: number,
     public pageSize: number,
-    public orders: SortOrder[] = [],
-    public filters: Filter[] = []) {
+    public sortOrders: SortOrder[] = [],
+    public filters: FilterColumn[] = []) {
   }
 }
 
