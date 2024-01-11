@@ -111,7 +111,7 @@ export class DataTableComponent implements OnInit {
             this.row$ = of(response.items);
             this.totalRows = response.totalFiltered;
             this.isLoading = false;
-            
+
           }
         },
         error: (err) => {
