@@ -36,14 +36,17 @@ export class DataTableComponent implements OnInit {
   sortColumns: SortOrder[] = [];
   row$: Observable<any[]> = of([]);
   generalSearchValue: string = "";
+  isError:boolean = false 
 
   constructor(
     private httpClientService: HttpClientService) {
+      console.log(this.isError)
 
   }
 
   ngOnInit(): void {
     this.loadTable();
+    
   }
 
   onSort(name: string, order: SortOrderType) {
@@ -53,7 +56,6 @@ export class DataTableComponent implements OnInit {
         order: order
       }
     ];
-    console.log(this.sortColumns);
     this.loadTable();
   }
 
@@ -92,14 +94,19 @@ export class DataTableComponent implements OnInit {
         request.pageSize,
         request.sortOrders,
         this.defaultFilters);
-
-    this.isLoading = true;
+        
     this.httpClientService.post<PaginateResult<any>>(this.url, request)
-      .pipe(finalize(() => this.isLoading = false))
-      .subscribe(response => {
-        if (response) {
-          this.row$ = of(response.items);
-          this.totalRows = response.totalFiltered;
+      .pipe()
+      .subscribe({
+        next:(response) => {
+          if (response) {
+            this.row$ = of(response.items);
+            this.totalRows = response.totalFiltered;
+            this.isLoading = false;
+          }
+        }, error:(err)=>{
+          this.isError = !this.isError
+          this.isLoading = false;
         }
       });
   }

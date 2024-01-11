@@ -1,5 +1,5 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -7,7 +7,9 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [NgClass, NgIf,FormsModule],
   templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.css']
+  styleUrls: ['./pagination.component.css'],
+  changeDetection:ChangeDetectionStrategy.OnPush
+  
 })
 export class PaginationComponent {
    @Input() currentPage:number = 1;
