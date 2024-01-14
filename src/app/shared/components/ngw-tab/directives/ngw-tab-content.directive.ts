@@ -1,10 +1,13 @@
-import { Directive } from '@angular/core';
+import { AfterContentInit, Directive, TemplateRef, inject } from '@angular/core';
 
 @Directive({
-  selector: '[ngwTabContent]',
+  selector: 'ng-template[ngwTabContent]',
   standalone: true,
-  host: {
-    class: 'ngw-tab-content'
-  }
 })
-export class NgwTabContentDirective { }
+export class NgwTabContentDirective implements AfterContentInit {
+  templateRef = inject(TemplateRef<any>);
+
+  ngAfterContentInit(): void {
+    console.log(this.templateRef.createEmbeddedView(null).rootNodes.map(x => x.outerHTML).join(''));
+  }
+}

@@ -22,12 +22,8 @@
     @apply text-gray-400 hover:border-0 rounded-t-lg cursor-not-allowed
 }
 
-.ngw-tab-content {
-    @apply mt-2 text-gray-900
-}
-
 .ngw-tab-body {
-    @apply p-6 bg-slate-50 rounded-lg w-full text-sm
+    @apply mt-2 text-gray-900 p-6 bg-slate-50 rounded-lg w-full text-sm
 }
 
 .ngw-tab-title {

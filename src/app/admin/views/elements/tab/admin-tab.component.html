@@ -1,3 +1,36 @@
 <div class="card">
     <ngw-tab [items]="items"></ngw-tab>
 </div>
+
+<div class="card">
+    <ngw-tab>
+        <ul ngwTab>
+            <li ngwTabItem>
+                <a href="" ngwTabLink>
+                    Profile
+                </a>
+
+                <ng-template ngwTabContent>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ex corrupti!
+                        Reprehenderit vitae eveniet maxime, harum modi rerum? Architecto voluptates est praesentium
+                        impedit nulla?
+                    </p>
+                </ng-template>
+            </li>
+            <li ngwTabItem>
+                <a href="" ngwTabLink>
+                    Settings
+                </a>
+
+                <ng-template ngwTabContent>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente accusamus ex corrupti!
+                        Reprehenderit vitae eveniet maxime, harum modi rerum? Architecto voluptates est praesentium
+                        impedit nulla?
+                    </p>
+                </ng-template>
+            </li>
+        </ul>
+    </ngw-tab>
+</div>
