@@ -71,5 +71,7 @@ export class AdvanceSearchRequest implements IPagingSearchRequest {
 export interface PaginateResult<T> {
   totalFiltered: number;
   total: number;
+  status: string;
   items: T[]
+  data: T[]
 }

@@ -103,7 +103,7 @@ export class DataTableComponent implements OnInit {
     );
 
     this.httpClientService
-      .post<PaginateResult<any>>(this.url, request)
+      .get<PaginateResult<any>>("https://tours-gules.vercel.app/api/v1/tours?page=2&limit=2")
       .pipe()
       .subscribe({
         next: (response) => {
@@ -111,7 +111,7 @@ export class DataTableComponent implements OnInit {
             this.row$ = of(response.items);
             this.totalRows = response.totalFiltered;
             this.isLoading = false;
-
+            console.log(response);
           }
         },
         error: (err) => {

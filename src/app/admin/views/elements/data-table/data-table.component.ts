@@ -16,22 +16,16 @@ import { FilterColumn } from 'src/app/shared/components/data-table/paging.type';
   styleUrl: './data-table.component.css',
 })
 export class AdminDataTableComponent {
-  filters: FilterColumn[] = [
-    // {
-    //   filterBy: "Name",
-    //   value: "A positive",
-    //   operator: OperatorType.Contains,
-    //   isGenericValue: false
-    // }
-  ];
+  filters: FilterColumn[] = []
 
-  apiUrl: string = 'api/v1/blood-groups/list';
+
+  apiUrl: string = 'v1/tours';
 
   dtSetting: Datatable = new Datatable(
     [
-      new DatatableColumn('ID No', 'id', { width: '20%' }, true, true),
+      new DatatableColumn('ID No', 'id', { width: '20%' }),
       new DatatableColumn('Name', 'name', { width: '20%', align: 'justify-center' }, true, true),
-      new DatatableColumn('Description', 'description', { width: '20%', align: 'justify-center' }, true, true),
+      new DatatableColumn('Description', 'description', { width: '20%', align: 'justify-center' }, false, false),
       new DatatableColumn('Action', 'status', { width: '40%', align: 'justify-end' }, false, false, (row) => this.prepare(row), undefined,
         [new DatatableAction('Actions', 'primary', (x) => this.hitAction(x))]
       ),

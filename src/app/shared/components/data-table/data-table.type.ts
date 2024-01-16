@@ -1,8 +1,6 @@
 export class Datatable {
   public tableName: string = 'Table';
-
   public columns: DatatableColumn[] = [];
-
   constructor(columns: DatatableColumn[], tableName: string = 'Table') {
     this.columns = columns;
     this.tableName = tableName;
@@ -43,12 +41,12 @@ export interface IUtils{
   width?:string;
   align?:string;
 }
-
+export interface IDisplay{
+  
+}
 export class DatatableColumn {
   public title: string = '';
   public name: string = '';
-  // public width: string = '';
-  // public align: string = '';
   public utils:IUtils = {};
   public isSortable: boolean = true;
   public isAction: boolean = false;
@@ -59,8 +57,6 @@ export class DatatableColumn {
   constructor(
     title: string,
     name: string,
-    // width: string = '100%',
-    // align: string = 'justify-start',
     utils:IUtils = {},
     isAction: boolean = false,
     isSortable: boolean = false,
@@ -70,8 +66,6 @@ export class DatatableColumn {
   ) {
     this.title = title;
     this.name = name;
-    // this.width = width;
-    // this.align = align;
     this.utils = utils;
     this.isAction = isAction;
     this.isSortable = isSortable;
