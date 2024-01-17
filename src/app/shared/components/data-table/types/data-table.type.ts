@@ -56,6 +56,7 @@ export interface IUtils {
   width?: string;
   align?: string;
   display?: DisplayType
+  pipe?: string;
 }
 
 

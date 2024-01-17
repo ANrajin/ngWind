@@ -41,7 +41,7 @@
                   [ngClass]="column.utils.display ? column.utils.display + 'table-cell' : ''  ">
                   <span class="{{ column.utils.align ? 'flex ' + column.utils.align : '' }}" style="text-wrap: wrap;"
                     *ngIf="column.formatter == null">
-                    {{row[column.name]}}
+                    {{row[column.name] }}
                   </span>
                   <div *ngIf="column.formatter && column.action" (click)="column.action(row)"
                     [innerHTML]="column.formatter(row) | safeHtml">
