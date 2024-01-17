@@ -68,10 +68,16 @@ export class AdvanceSearchRequest implements IPagingSearchRequest {
   }
 }
 
+export interface IData{
+  totalTours:number;
+  page:number;
+  tours:[]
+}
+
 export interface PaginateResult<T> {
   totalFiltered: number;
   total: number;
   status: string;
   items: T[]
-  data: T[]
+  data: IData
 }

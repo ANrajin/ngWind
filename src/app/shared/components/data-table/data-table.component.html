@@ -25,51 +25,33 @@
               </tr>
             </thead>
             <div class=" text-center  w-full absolute top-52" *ngIf="isLoading">
-              <button type="button"
-                class="inline-flex items-center px-4 py-1 font-normal leading-6 text-sm shadow rounded-md bg-purple-100 text-purple-800 transition ease-in-out duration-150 cursor-not-allowed"
-                disabled="">
-                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-purple-800" xmlns="http://www.w3.org/2000/svg"
-                  fill="none" viewBox="0 0 24 24">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                  <path class="opacity-75" fill="currentColor"
-                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
-                  </path>
-                </svg>
-                Loading...
-              </button>
+              <data-table-loader />
             </div>
             <div class=" text-center  w-full absolute top-52" *ngIf="isError">
-              <div
-                class="flex items-center justify-between mx-auto w-[190px]  py-2 px-3 bg-rose-50 rounded-lg shadow-sm">
-                <div
-                  class="inline-flex items-center justify-center flex-shrink-0 w-6 h-6 text-red-500 bg-red-200 rounded-lg ">
-                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
-                    viewBox="0 0 20 20">
-                    <path
-                      d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z" />
-                  </svg>
-                  <span class="sr-only">Error icon</span>
-                </div>
-                <div class="text-sm font-normal text-red-600">Data fetching error</div>
-              </div>
+              <data-error />
             </div>
             <tbody *ngIf="!isLoading">
+              @if(dataLength > 1 ){
               @for (row of row$ | async; track row?.id){
               <tr class="bg-white border-b  hover:bg-gray-50">
                 @for(column of setting.columns; track column?.action){
-                <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap" [width]="column.utils.width"
-                  *ngIf="column.isAction">
-                  <span style="text-wrap: wrap;" *ngIf="column.formatter == null">{{row[column.name]}}</span>
+                <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap border"
+                  [width]="column.utils.width" *ngIf="!column.isAction">
+                  <span class="{{ column.utils.align ? 'flex ' + column.utils.align : '' }}" style="text-wrap: wrap;"
+                    *ngIf="column.formatter == null">
+                    {{row[column.name]}}
+                  </span>
                   <div *ngIf="column.formatter && column.action" (click)="column.action(row)"
-                    [innerHTML]="column.formatter(row) | safeHtml"></div>
+                    [innerHTML]="column.formatter(row) | safeHtml">
+                  </div>
                   <div *ngIf="column.formatter && !column.action" [innerHTML]="column.formatter(row) | safeHtml"></div>
                 </td>
                 <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap " [width]="column.utils.width"
-                  *ngIf="!column.isAction">
-                  <div class=" align-middle">
+                  *ngIf="column.isAction">
+                  <div class="{{ column.utils.align ? 'flex ' + column.utils.align : '' }}">
                     @for(action of column.actions; track action){
-                    <button type="button" class="btn btn-{{action.class}} me-2 btn-xs " (click)="action?.action(row)">
-                      {{action.title}}
+                    <button type="button" class="btn btn-{{action.class}}  btn-xs mx-1.5" (click)="action?.action(row)">
+                      <i class="{{action.buttonConfig.icon}}"></i> {{action.buttonConfig.tittle}}
                     </button>
                     }
                   </div>
@@ -77,12 +59,17 @@
                 }
               </tr>
               }
+              } @else if(!isError) {
+              <div class=" text-center  w-full absolute top-52 ">
+                <data-not-found />
+              </div>
+              }
             </tbody>
           </table>
         </div>
       </div>
       <pagination *ngIf="totalRows" (changePage)="changePage($event)" [currentPage]="currentPageIndex"
-        [total]="totalRows" [pageSize]="pageSize"></pagination>
+        [total]="totalRows" [pageSize]="pageSize" />
     </div>
   </div>
 </div>

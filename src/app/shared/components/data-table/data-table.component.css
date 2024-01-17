@@ -46,10 +46,10 @@
   @apply text-xs text-gray-700 uppercase bg-gray-50 z-50;
 }
 .ng-wind-header-item {
-  @apply px-4 py-3;
+  @apply px-3 py-2;
 }
 .ng-wind-data-item {
-  @apply px-4 py-3;
+  @apply px-3 py-2;
 }
 
 .sort-column {
@@ -60,4 +60,8 @@
 
 .sort-active {
   opacity: 1 !important;
+}
+
+.table-error-btn{
+  @apply inline-flex items-center px-4 py-1 font-normal leading-6 text-sm shadow rounded-md bg-purple-100 text-purple-800 transition ease-in-out duration-150 cursor-not-allowed
 }

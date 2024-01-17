@@ -1,10 +1,13 @@
 import { CommonModule, NgClass, NgIf } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { SafeHtmlPipe } from '../../pipes/safe-html.pipe';
 import { HttpClientService } from '../../services/httpClient.service';
 import { PaginationComponent } from '../pagination/pagination.component';
-import { Datatable } from './data-table.type';
+import { DataErrorComponent } from "./data-table-component/data-error.component";
+import { DataNotFoundComponent } from './data-table-component/data-not-found.component';
+import { DataTableLoaderComponent } from './data-table-component/data-table-loader.component';
+import { Datatable } from './types/data-table.type';
 import {
   AdvanceSearchRequest,
   FilterColumn,
@@ -12,14 +15,15 @@ import {
   PaginateResult,
   SortOrder,
   SortOrderType,
-} from './paging.type';
+} from './types/paging.type';
 
 @Component({
   selector: 'data-table',
   standalone: true,
   templateUrl: './data-table.component.html',
   styleUrl: './data-table.component.css',
-  imports: [NgClass, NgIf, PaginationComponent, CommonModule, SafeHtmlPipe],
+  changeDetection: ChangeDetectionStrategy.Default,
+  imports: [NgClass, NgIf, PaginationComponent, CommonModule, SafeHtmlPipe, DataErrorComponent, DataTableLoaderComponent, DataNotFoundComponent]
 })
 export class DataTableComponent implements OnInit {
   shorting: boolean = false;
@@ -44,6 +48,7 @@ export class DataTableComponent implements OnInit {
   row$: Observable<any[]> = of([]);
   generalSearchValue: string = '';
   isError: boolean = false;
+  dataLength: number = 0
 
   constructor(private httpClientService: HttpClientService) {
 
@@ -103,15 +108,16 @@ export class DataTableComponent implements OnInit {
     );
 
     this.httpClientService
-      .get<PaginateResult<any>>("https://tours-gules.vercel.app/api/v1/tours?page=2&limit=2")
+      .get<PaginateResult<any>>("https://tours-gules.vercel.app/api/v1/tours?page=1&limit=8")
       .pipe()
       .subscribe({
         next: (response) => {
           if (response) {
-            this.row$ = of(response.items);
+            this.dataLength = response.data.tours.length
+            this.row$ = of(response.data.tours);
             this.totalRows = response.totalFiltered;
             this.isLoading = false;
-            console.log(response);
+            console.log(response.data.tours);
           }
         },
         error: (err) => {

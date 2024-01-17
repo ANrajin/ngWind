@@ -7,8 +7,13 @@ export class Datatable {
   }
 }
 
+export interface IButtonConfig {
+  tittle?: string;
+  icon?: string;
+}
+
 export class DatatableAction {
-  public title: string = '';
+  public buttonConfig: IButtonConfig = {}
   public class:
     | 'primary'
     | 'secondary'
@@ -20,7 +25,7 @@ export class DatatableAction {
   public action?: (row: any) => void;
 
   constructor(
-    title: string,
+    buttonConfig: IButtonConfig = {},
     color:
       | 'primary'
       | 'secondary'
@@ -31,23 +36,23 @@ export class DatatableAction {
       | '' = '',
     callback: (row: any) => void
   ) {
-    this.title = title;
+    this.buttonConfig = buttonConfig;
     this.class = color;
     this.action = callback;
   }
 }
 
-export interface IUtils{
-  width?:string;
-  align?:string;
+export interface IUtils {
+  width?: string;
+  align?: string;
+  display?: 'sm:visible' | 'md:visible' | 'lg:visible' | 'xl:visible' | 'xxl:visible'
 }
-export interface IDisplay{
-  
-}
+// export type IDisplay = display: 'sm:visible' | 'md:visible' | 'lg:visible' | 'xl:visible' | 'xxl:visible'
+
 export class DatatableColumn {
   public title: string = '';
   public name: string = '';
-  public utils:IUtils = {};
+  public utils: IUtils = {};
   public isSortable: boolean = true;
   public isAction: boolean = false;
   public actions: DatatableAction[] = [];
@@ -57,7 +62,7 @@ export class DatatableColumn {
   constructor(
     title: string,
     name: string,
-    utils:IUtils = {},
+    utils: IUtils = {},
     isAction: boolean = false,
     isSortable: boolean = false,
     formatter?: (row: any) => any,
