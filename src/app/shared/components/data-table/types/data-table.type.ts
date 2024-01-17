@@ -42,12 +42,22 @@ export class DatatableAction {
   }
 }
 
+export enum DisplayType {
+  xxs = '!',
+  xs = 'xs:',
+  sm = 'sm:',
+  md = 'md:',
+  lg = 'lg:',
+  xl = 'xl:',
+  xxl = '2xl:',
+}
+
 export interface IUtils {
   width?: string;
   align?: string;
-  display?: 'sm:visible' | 'md:visible' | 'lg:visible' | 'xl:visible' | 'xxl:visible'
+  display?: DisplayType
 }
-// export type IDisplay = display: 'sm:visible' | 'md:visible' | 'lg:visible' | 'xl:visible' | 'xxl:visible'
+
 
 export class DatatableColumn {
   public title: string = '';

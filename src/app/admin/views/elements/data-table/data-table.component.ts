@@ -5,6 +5,7 @@ import {
   Datatable,
   DatatableAction,
   DatatableColumn,
+  DisplayType,
 } from 'src/app/shared/components/data-table/types/data-table.type';
 import { FilterColumn } from 'src/app/shared/components/data-table/types/paging.type';
 
@@ -23,14 +24,14 @@ export class AdminDataTableComponent {
 
   dtSetting: Datatable = new Datatable(
     [
-      new DatatableColumn('Name', 'name', { width: '20%', align: 'justify-start', display:'xxl:visible' }, false, true),
-      new DatatableColumn('Price', 'price', { width: '20%', align: 'justify-center' }, false, true),
-      new DatatableColumn('Description', 'description', { width: '30%', align: 'justify-start' }, false, true),
-      new DatatableColumn('Status', 'isGuide', { width: '3%', align: 'justify-start' }, false, false, (row) => this.prepare(row)),
-      new DatatableColumn('Action', 'status', { width: '27%', align: 'justify-center' }, true, false, (row) => this.prepare(row), undefined,
+      new DatatableColumn('Name', 'name', { width: '20%', align: 'justify-start', display: DisplayType.xxl }, false, true),
+      new DatatableColumn('Price', 'price', { width: '20%', align: 'justify-center', display: DisplayType.xxs }, false, true),
+      new DatatableColumn('Description', 'description', { width: '30%', align: 'justify-start', display: DisplayType.lg }, false, true),
+      new DatatableColumn('Status', 'isGuide', { width: '3%', align: 'justify-start', display: DisplayType.lg }, false, false, (row) => this.prepare(row)),
+      new DatatableColumn('Action', 'status', { width: '27%', align: 'justify-center', display: DisplayType.xxs }, true, false, (row) => this.prepare(row), undefined,
         [
-          new DatatableAction({tittle:'Delete', icon:'bi bi-trash' }, 'danger', (x) => this.hitAction(x)),
-          new DatatableAction({ tittle: 'action' }, 'primary', (x) => this.hitAction(x)),
+          new DatatableAction({ tittle: 'Delete', icon: 'bi bi-trash' }, 'danger', (x) => this.hitAction(x)),
+          new DatatableAction({ tittle: 'Edit', icon:'bi bi-pencil-square' }, 'primary', (x) => this.hitAction(x)),
         ]
       ),
     ],
