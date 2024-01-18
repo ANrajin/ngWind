@@ -43,19 +43,19 @@ export class DatatableAction {
 }
 
 export enum DisplayType {
-  xxs = '!',
-  xs = 'xs:',
-  sm = 'sm:',
-  md = 'md:',
-  lg = 'lg:',
-  xl = 'xl:',
-  xxl = '2xl:',
+
+  xs = 'table-cell',
+  sm = 'hidden sm:table-cell',
+  md = 'hidden md:table-cell',
+  lg = 'hidden lg:table-cell',
+  xl = 'hidden xl:table-cell',
+  xxl = 'hidden 2xl:table-cell',
 }
 
 export interface IUtils {
   width?: string;
   align?: string;
-  display?: DisplayType
+  display?: string;
   pipe?: string;
 }
 

@@ -9,9 +9,8 @@
           <table class="ng-wind-table relative">
             <thead class="ng-wind-table-header">
               <tr>
-                <th scope="col" class="ng-wind-header-item border hidden " *ngFor="let column of setting.columns"
-                  [width]="column.utils.width"
-                  [ngClass]="column.utils.display ? column.utils.display + 'table-cell' : ''  ">
+                <th scope="col" class="ng-wind-header-item border {{column.utils.display}} "
+                  *ngFor="let column of setting.columns" [width]="column.utils.width">
                   <div class="flex items-center" [ngClass]="column.utils.align ? column.utils.align : '' ">
                     {{column.title}}
                     <div *ngIf="column.isSortable">
@@ -32,13 +31,13 @@
               <data-error />
             </div>
             <tbody *ngIf="!isLoading">
-              @if(dataLength > 1 ){
+              @if(dataLength > 0 ){
               @for (row of row$ | async; track row?.id){
               <tr class="bg-white border-b  hover:bg-gray-50">
                 @for(column of setting.columns; track column?.action){
-                <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap border hidden "
-                  [width]="column.utils.width" *ngIf="!column.isAction"
-                  [ngClass]="column.utils.display ? column.utils.display + 'table-cell' : ''  ">
+                <td
+                  class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap border {{column.utils.display}} "
+                  [width]="column.utils.width" *ngIf="!column.isAction">
                   <span class="{{ column.utils.align ? 'flex ' + column.utils.align : '' }}" style="text-wrap: wrap;"
                     *ngIf="column.formatter == null">
                     {{row[column.name] }}
@@ -48,9 +47,8 @@
                   </div>
                   <div *ngIf="column.formatter && !column.action" [innerHTML]="column.formatter(row) | safeHtml"></div>
                 </td>
-                <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap hidden"
-                  [width]="column.utils.width" *ngIf="column.isAction"
-                  [ngClass]="column.utils.display ? column.utils.display + 'table-cell' : ''  ">
+                <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap {{column.utils.display}}"
+                  [width]="column.utils.width" *ngIf="column.isAction">
                   <div class="{{ column.utils.align ? 'flex ' + column.utils.align : '' }}">
                     @for(action of column.actions; track action){
                     <button type="button" class="btn btn-{{action.class}}  btn-xs mx-1.5" (click)="action?.action(row)">

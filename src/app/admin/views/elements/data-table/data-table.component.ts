@@ -24,11 +24,11 @@ export class AdminDataTableComponent {
 
   dtSetting: Datatable = new Datatable(
     [
-      new DatatableColumn('Name', 'name', { width: '20%', align: 'justify-start', display: DisplayType.xxl }, false, true),
-      new DatatableColumn('Price', 'price', { width: '20%', align: 'justify-center', display: DisplayType.xxs, pipe: " currency:'CAD':'symbol':'4.2-2'" }, false, true),
+      new DatatableColumn('Name', 'name', { width: '20%', align: 'justify-start', display:DisplayType.xs}, false, true),
+      new DatatableColumn('Price', 'price', { width: '20%', align: 'justify-center', display: DisplayType.sm }, false, true),
       new DatatableColumn('Description', 'description', { width: '30%', align: 'justify-start', display: DisplayType.lg }, false, true),
-      new DatatableColumn('Status', 'isGuide', { width: '3%', align: 'justify-start', display: DisplayType.lg }, false, false, (row) => this.prepare(row)),
-      new DatatableColumn('Action', 'status', { width: '27%', align: 'justify-center', display: DisplayType.xxs }, true, false, (row) => this.prepare(row), undefined,
+      new DatatableColumn('Status', 'isGuide', { width: '3%', align: 'justify-start', display: DisplayType.xxl }, false, false, (row) => this.prepare(row)),
+      new DatatableColumn('Action', 'status', { width: '27%', align: 'justify-center', display: DisplayType.md }, true, false, (row) => this.prepare(row), undefined,
         [
           new DatatableAction({ tittle: 'Delete', icon: 'bi bi-trash' }, 'danger', (x) => this.hitAction(x)),
           new DatatableAction({ tittle: 'Edit', icon: 'bi bi-pencil-square' }, 'primary', (x) => this.hitAction(x)),
