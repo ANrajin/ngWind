@@ -108,7 +108,7 @@ export class DataTableComponent implements OnInit {
     );
 
     this.httpClientService
-      .get<PaginateResult<any>>("https://tours-gules.vercel.app/api/v1/tours?page=1&limit=1")
+      .get<PaginateResult<any>>("https://tours-gules.vercel.app/api/v1/tours?page=1&limit=10")
       .pipe()
       .subscribe({
         next: (response) => {

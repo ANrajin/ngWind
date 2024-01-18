@@ -32,31 +32,31 @@
             </div>
             <tbody *ngIf="!isLoading">
               @if(dataLength > 0 ){
-              @for (row of row$ | async; track row?.id){
-              <tr class="bg-white border-b  hover:bg-gray-50">
-                @for(column of setting.columns; track column?.action){
-                <td
-                  class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap border {{column.utils.display}} "
-                  [width]="column.utils.width" *ngIf="!column.isAction">
-                  <span class="{{ column.utils.align ? 'flex ' + column.utils.align : '' }}" style="text-wrap: wrap;"
-                    *ngIf="column.formatter == null">
-                    {{row[column.name] }}
-                  </span>
-                  <div *ngIf="column.formatter && column.action" (click)="column.action(row)"
-                    [innerHTML]="column.formatter(row) | safeHtml">
-                  </div>
-                  <div *ngIf="column.formatter && !column.action" [innerHTML]="column.formatter(row) | safeHtml"></div>
-                </td>
-                <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap {{column.utils.display}}"
-                  [width]="column.utils.width" *ngIf="column.isAction">
-                  <div class="{{ column.utils.align ? 'flex ' + column.utils.align : '' }}">
-                    @for(action of column.actions; track action){
-                    <button type="button" class="btn btn-{{action.class}}  btn-xs mx-1.5" (click)="action?.action(row)">
-                      <i class="{{action.buttonConfig.icon}}"></i> {{action.buttonConfig.tittle}}
-                    </button>
-                    }
-                  </div>
-                </td>
+                @for (row of row$ | async; track row?.id){
+                <tr class="bg-white border-b  hover:bg-gray-50">
+                  @for(column of setting.columns; track column?.action){
+                  <td
+                    class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap border {{column.utils.display}} "
+                    [width]="column.utils.width" *ngIf="!column.isAction">
+                    <span class="{{ column.utils.align ? 'flex ' + column.utils.align : '' }}" style="text-wrap: wrap;"
+                      *ngIf="column.formatter == null">
+                      {{row[column.name] }}
+                    </span>
+                    <div *ngIf="column.formatter && column.action" (click)="column.action(row)"
+                      [innerHTML]="column.formatter(row) | safeHtml">
+                    </div>
+                    <div *ngIf="column.formatter && !column.action" [innerHTML]="column.formatter(row) | safeHtml"></div>
+                  </td>
+                  <td class="ng-wind-data-item font-medium text-gray-800 whitespace-nowrap {{column.utils.display}}"
+                    [width]="column.utils.width" *ngIf="column.isAction">
+                    <div class="{{ column.utils.align ? 'flex ' + column.utils.align : '' }}">
+                      @for(action of column.actions; track action){
+                      <button type="button" class="btn btn-{{action.class}}  btn-xs mx-1.5" (click)="action?.action(row)">
+                        <i class="{{action.buttonConfig.icon}}"></i> {{action.buttonConfig.tittle}}
+                      </button>
+                      }
+                    </div>
+                  </td>
                 }
               </tr>
               }

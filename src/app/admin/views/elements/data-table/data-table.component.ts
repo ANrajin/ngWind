@@ -1,4 +1,4 @@
-import { CurrencyPipe, DatePipe, NgClass } from '@angular/common';
+import { CurrencyPipe, NgClass } from '@angular/common';
 import { Component, ViewChild } from '@angular/core';
 import { DataTableComponent } from 'src/app/shared/components/data-table/data-table.component';
 import {
@@ -17,6 +17,7 @@ import { FilterColumn } from 'src/app/shared/components/data-table/types/paging.
   styleUrl: './data-table.component.css',
 })
 export class AdminDataTableComponent {
+  
   filters: FilterColumn[] = []
 
 
@@ -24,7 +25,7 @@ export class AdminDataTableComponent {
 
   dtSetting: Datatable = new Datatable(
     [
-      new DatatableColumn('Name', 'name', { width: '20%', align: 'justify-start', display:DisplayType.xs}, false, true),
+      new DatatableColumn('Name', 'name', { width: '20%', align: 'justify-start', display: DisplayType.xs }, false, true),
       new DatatableColumn('Price', 'price', { width: '20%', align: 'justify-center', display: DisplayType.sm }, false, true),
       new DatatableColumn('Description', 'description', { width: '30%', align: 'justify-start', display: DisplayType.lg }, false, true),
       new DatatableColumn('Status', 'isGuide', { width: '3%', align: 'justify-start', display: DisplayType.xxl }, false, false, (row) => this.prepare(row)),
