@@ -77,7 +77,5 @@ export interface IData{
 export interface PaginateResult<T> {
   totalFiltered: number;
   total: number;
-  status: string;
   items: T[]
-  data: IData
 }
