@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { pageTransition } from 'src/app/shared/animations';
+import { pageTransition } from 'src/app/shared/utils/animations';
 
 @Component({
   selector: 'app-users',

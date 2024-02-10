@@ -1,0 +1,89 @@
+<div [@pageTransition] class="bg-slate-50 flex justify-center items-center pt-8">
+    <div class="card p-5 w-10/12 xl:w-1/2 grid grid-cols-1 md:grid-cols-2">
+        <div class="relative flex flex-col p-1 md:p-8">
+                <h2 class="text-lg  pb-2">
+                    Get Started Now
+                </h2>
+            <p class="text-xs">Enter your credentials to create your account</p>
+            <div class="py-4">
+                <button type="button" class="text-sm border border-gray-100 px-5 py-3 rounded-lg w-full
+                 hover:bg-emerald-100 hover:border-emerald-100 transition-all ease-in-out duration-300">
+                    <i class="bi bi-google mr-1"></i>
+                    Log in with Google
+                </button>
+            </div>
+            <div class="grid grid-cols-5 items-center">
+                <div class="col-span-2">
+                    <hr>
+                </div>
+                <p class="text-center">or</p>
+                <div class="col-span-2">
+                    <hr>
+                </div>
+            </div>
+            <form class="my-5" (submit)="onFormSubmitHandler($event)">
+                <div class="form-group">
+                    <label class="form-label" for="username">Username</label>
+                    <div class="relative">
+                        <input type="text" id="username" class="form-control w-full ps-10"
+                            placeholder="please enter your username">
+                        <span class="absolute top-2 left-0 ps-3 text-gray-400">
+                            <i class="bi bi-person-circle"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <div class="relative">
+                        <input type="email" id="email" class="form-control w-full ps-10"
+                            placeholder="please enter your email">
+                        <span class="absolute top-2 left-0 ps-3 text-gray-400">
+                            <i class="bi bi-envelope-at"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="password">Password</label>
+                    <div class="relative">
+                        <input type="password" id="password" class="form-control w-full ps-10"
+                            placeholder="please enter your password">
+                        <span class="absolute top-2 left-0 ps-3 text-gray-400">
+                            <i class="bi bi-shield-lock"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="confirmpassword">Confirm Password</label>
+                    <div class="relative">
+                        <input type="password" id="confirmpassword" class="form-control w-full ps-10"
+                            placeholder="please enter your password again">
+                        <span class="absolute top-2 left-0 ps-3 text-gray-400">
+                            <i class="bi bi-shield-lock"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="my-5"></div>
+                <button type="submit" class="btn w-full btn-theme" [disabled]="isLoading">
+                    <btn-spinner *ngIf="isLoading"></btn-spinner>
+                    Sign up
+                </button>
+            </form>
+            <div class="text-sm text-gray-400">
+                <p>
+                    Already have an account?
+                    <a [routerLink]="commonService.prepareRoute(publicRoutes.Signin)" class="text-emerald-600">
+                        Sign in
+                    </a>
+                    instead.
+                </p>
+            </div>
+        </div>
+        <div class="md:block hidden text-white bg-emerald-600 rounded-lg p-8 xl:p-12">
+            <h2 class="text-lg xl:text-2xl pb-3">The simplest way to manage<br>your events</h2>
+            <div class="py-3">
+                <img src={{signupbannerImage}} alt="login page image"
+                    class="border rounded-lg border-emerald-600 shadow">
+            </div>
+        </div>
+    </div>
+</div>

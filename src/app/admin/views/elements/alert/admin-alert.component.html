@@ -1,0 +1,113 @@
+<div [@pageTransition]>
+    <div class="card p-5">
+        <div class="card-title">
+            <h3 class="text-xl font-bold leading-none">Basic Alerts</h3>
+        </div>
+        <app-alert [show]="true">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?</p>
+        </app-alert>
+
+        <app-alert [show]="true" [type]="alertType.Danger">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?</p>
+        </app-alert>
+
+        <app-alert [show]="true" [type]="alertType.Info">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?</p>
+        </app-alert>
+
+        <app-alert [show]="true" [type]="alertType.Warning">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?</p>
+        </app-alert>
+    </div>
+
+
+    <div class="card p-5">
+        <div class="card-title">
+            <h3 class="text-xl font-bold leading-none">Dismissable Alerts</h3>
+        </div>
+        <app-alert [show]="true" [dismissible]="true">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?</p>
+        </app-alert>
+
+        <app-alert [show]="true" [dismissible]="true" [type]="alertType.Danger">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?</p>
+        </app-alert>
+
+        <app-alert [show]="true" [dismissible]="true" [type]="alertType.Info">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?</p>
+        </app-alert>
+
+        <app-alert [show]="true" [dismissible]="true" [type]="alertType.Warning">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?</p>
+        </app-alert>
+    </div>
+
+    <div class="card p-5">
+        <div class="card-title">
+            <h3 class="text-xl font-bold leading-none">Alerts With Icons</h3>
+        </div>
+        <app-alert [show]="true" [dismissible]="true">
+            <h6 class="text-lg font-semibold">
+                <i class="bi bi-check2-circle"></i>
+                Success
+            </h6>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
+            </p>
+        </app-alert>
+
+        <app-alert [show]="true" [dismissible]="true" [type]="alertType.Danger">
+            <h6 class="text-lg font-semibold">
+                <i class="bi bi-bug"></i>
+                Danger
+            </h6>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
+            </p>
+        </app-alert>
+
+        <app-alert [show]="true" [dismissible]="true" [type]="alertType.Info">
+            <h6 class="text-lg font-semibold">
+                <i class="bi bi-exclamation-circle"></i>
+                Info
+            </h6>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
+            </p>
+        </app-alert>
+
+        <app-alert [show]="true" [dismissible]="true" [type]="alertType.Warning">
+            <h6 class="text-lg font-semibold">
+                <i class="bi bi-exclamation-triangle"></i>
+                Warning
+            </h6>
+            <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti repellendus porro nam, natus
+                blanditiis
+                quibusdam mollitia! Ipsam perferendis sint error laudantium eos atque aut nobis?
+            </p>
+        </app-alert>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+.alert {
+  @apply mt-5 py-2 px-5 rounded text-sm shadow-sm relative transition-all ease-in-out duration-300 overflow-hidden
+}
+
+.alert-success {
+  @apply border border-l-4 border-l-green-500 border-green-100 bg-green-100 text-green-600
+}
+
+.alert-info {
+  @apply border border-l-4 border-l-blue-500 border-blue-100 bg-blue-100 text-blue-600
+}
+
+.alert-danger {
+  @apply border border-l-4 border-l-red-500 border-red-100 bg-red-100 text-red-600
+}
+
+.alert-warning {
+  @apply border border-l-4 border-l-orange-500 border-orange-100 bg-orange-100 text-orange-600
+}
+
+.alert-dismiss {
+  @apply absolute top-0 right-0 cursor-pointer p-0.5;
+}

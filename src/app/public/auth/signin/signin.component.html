@@ -1,0 +1,83 @@
+<div [@pageTransition] class="min-h-screen bg-slate-50 flex justify-center items-center ">
+    <div class="card p-5 w-10/12 xl:w-1/2 grid grid-cols-1 md:grid-cols-2">
+        <div class="relative flex flex-col p-1 md:p-8">
+            <h2 class="text-lg  pb-2">
+                Get Started Now
+            </h2>
+
+            <p class="text-xs">Enter your credentials to access your account</p>
+
+            <div class="py-8">
+                <button type="button" class="text-sm border border-gray-100 px-5 py-3 rounded-lg w-full hover:bg-emerald-100 hover:border-emerald-100
+                    transition-all ease-in-out duration-300">
+                    <i class="bi bi-google mr-1"></i>
+                    Log in with Google
+                </button>
+            </div>
+            <div class="grid grid-cols-5 items-center">
+                <div class="col-span-2">
+                    <hr>
+                </div>
+                <p class="text-center">or</p>
+                <div class="col-span-2">
+                    <hr>
+                </div>
+            </div>
+
+            <app-alert (hideAlert)="onAlertCloseHandler($event)" [dismissible]="true" [messages]="serverErrors"
+                [show]="serverErrors.length > 0" [type]="AlertType.Danger"></app-alert>
+
+            <form class="my-5" [formGroup]="signInForm" (ngSubmit)="onFormSubmitHandler($event)">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="relative">
+                        <input type="email" id="email" class="form-control w-full ps-10" formControlName="username"
+                            placeholder="please enter your username or email">
+                        <span class="absolute top-2 left-0 ps-3 text-gray-400">
+                            <i class="bi bi-envelope-at"></i>
+                        </span>
+                    </div>
+                    <validation-error [fieldControl]="signInForm.controls['username']"></validation-error>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="relative">
+                        <input type="password" id="password" class="form-control w-full ps-10"
+                            formControlName="password" placeholder="please enter your password">
+                        <span class="absolute top-2 left-0 ps-3 text-gray-400">
+                            <i class="bi bi-shield-lock"></i>
+                        </span>
+                    </div>
+                    <validation-error [fieldControl]="signInForm.controls['password']"></validation-error>
+                </div>
+
+                <div class="text-sm my-4">
+                    <div class="inline-flex items-center gap-x-1">
+                        <input type="checkbox" id="rememberme" class="h-auto cursor-pointer">
+                        <label for="rememberme" class="cursor-pointer">Remember me</label>
+                    </div>
+                    <a href="javascript:void(0)" class="text-emerald-600 float-right">Forget password?</a>
+                </div>
+
+                <button type="submit" class="btn w-full btn-theme" [disabled]="isLoading">
+                    <btn-spinner *ngIf="isLoading" [show]="isLoading"></btn-spinner>
+                    <span class="btn-text" [ngClass]="{'translate-x-0.5': isLoading}">
+                        Sign in
+                    </span>
+                </button>
+            </form>
+
+            <div class="text-sm text-gray-400">
+                <p>Don't have any account? <a [routerLink]="commonService.prepareRoute(publicRoutes.Signup)"
+                        class="text-emerald-600">Sign up</a> now!</p>
+            </div>
+        </div>
+        <div class="md:block hidden text-white bg-emerald-600 rounded-lg p-8 xl:p-12">
+            <h2 class="text-lg xl:text-2xl pb-3">The simplest way to manage<br>your events</h2>
+            <p class="text-xs">Enter your credentials to access your account</p>
+            <div class="py-8">
+                <img src={{signinBannerImage}} alt="login page image" class="border rounded-lg border-emerald-600">
+            </div>
+        </div>
+    </div>
+</div>

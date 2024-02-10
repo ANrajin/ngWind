@@ -1,50 +1,95 @@
 <aside>
     <div class="brand-wrapper">
-        <a href="#" class="brand">
-            <img src="../assets/my-logo.png" alt="event bud" class="w-5">
-            <h1 class="text-xl font-bold text-slate-300">EVENTBUD</h1>
+        <a href="#" class="brand text-center">
+            <h1 class="flex items-center font-bold text-slate-300">
+                <span class="text-2xl mr-2 bg-green-600 w-8 h-8 rounded-md">N</span>
+                <span class="text-3xl tracking-widest">ngWind</span>
+            </h1>
         </a>
-        <button type="button" class="bg-slate-700 px-1 rounded hover:text-emerald-600 transition ease-in-out"
-            (click)="sidebarCollapsedHandler()">
-            <i class="bi" [ngClass]="sidebarIsCollapsed ? 'bi-arrow-left-short' : 'bi-arrow-right-short'"></i>
-        </button>
     </div>
     <ul class="menu-links">
         <li>
-            <a [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Dashboard)" routerLinkActive="active" class="menu-item"
-                ariaCurrentWhenActive="page">
+            <a [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Dashboard)"
+                routerLinkActive="active" class="menu-item" ariaCurrentWhenActive="page">
                 <i class="bi bi-columns-gap"></i>
                 <span>Dashboard</span>
             </a>
         </li>
         <li>
-            <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Events)" 
+            <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Events)"
                 routerLinkActive="active" ariaCurrentWhenActive="page">
                 <i class="bi bi-calendar4-event"></i>
                 <span>Events</span>
             </a>
         </li>
         <li>
-            <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements)" 
-                routerLinkActive="active" ariaCurrentWhenActive="page">
+            <a href="javascript:void(0)" class="menu-item sub-menu" aria-expanded="false"
+                (click)="subMenuToggleHandler($event)">
                 <i class="bi bi-diagram-3"></i>
                 <span>UI Elements</span>
             </a>
+            <ul class="sub-menu-item">
+                <li>
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Alert)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Alert</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Tabs)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Tabs</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Modal)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Modal</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Buttons)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Buttons</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.DataTable)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Data Table</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Elements, elementRoutes.Forms)"
+                        routerLinkActive="active" ariaCurrentWhenActive="page">
+                        <span>Forms</span>
+                    </a>
+                </li>
+            </ul>
         </li>
         <li>
-            <a href="javascript:void(0)" class="menu-item sub-menu" aria-expanded="false" (click)="subMenuToggleHandler($event)">
+            <a href="javascript:void(0)" class="menu-item sub-menu" aria-expanded="false"
+                (click)="subMenuToggleHandler($event)">
                 <i class="bi bi-sliders2-vertical"></i>
                 <span>Settings</span>
             </a>
             <ul class="sub-menu-item">
                 <li>
-                    <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Settings, settingRoutes.Profile)" 
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Settings, settingRoutes.Profile)"
                         routerLinkActive="active" ariaCurrentWhenActive="page">
                         <span>Profile</span>
                     </a>
                 </li>
                 <li>
-                    <a class="menu-item" [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Settings, settingRoutes.Users)" 
+                    <a class="menu-item"
+                        [routerLink]="commonServices.prepareRoute(appRoutes.Admin, adminRoutes.Settings, settingRoutes.Users)"
                         routerLinkActive="active" ariaCurrentWhenActive="page">
                         <span>Users</span>
                     </a>
@@ -64,3 +109,14 @@
         </li>
     </ul>
 </aside>
+
+<div class="collapsible-btn-container">
+    <button id="sidebar-collapse-btn" sidebarCollapse>
+        <div class="w-6 h-16 flex justify-center items-center">
+            <div class="collapsible-icons">
+                <div class="collapsible-top-icon"></div>
+                <div class="collapsible-bottom-icon"></div>
+            </div>
+        </div>
+    </button>
+</div>

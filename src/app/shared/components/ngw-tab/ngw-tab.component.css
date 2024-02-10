@@ -1,0 +1,35 @@
+.ngw-tab-container {
+    @apply text-sm font-medium text-gray-500
+}
+
+.ngw-tab-hr {
+    @apply flex flex-wrap -mb-px text-center
+}
+
+.ngw-tab-item {
+    @apply me-2
+}
+
+.ngw-tab-link {
+    @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-slate-600 hover:border-slate-300
+}
+
+.ngw-tab-link[aria-current=true] {
+    @apply border-emerald-600 text-emerald-600
+}
+
+.ngw-tab-link[aria-disabled=true] {
+    @apply text-gray-400 hover:border-0 rounded-t-lg cursor-not-allowed
+}
+
+.ngw-tab-content {
+    @apply mt-2 text-gray-900
+}
+
+.ngw-tab-body {
+    @apply p-6 bg-slate-50 rounded-lg w-full text-sm
+}
+
+.ngw-tab-title {
+    @apply text-lg font-bold mb-2
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { pageTransition } from 'src/app/shared/animations';
+import { Router } from "@angular/router";
+import { pageTransition } from 'src/app/shared/utils/animations';
 
 @Component({
   selector: 'app-events',
@@ -8,5 +9,10 @@ import { pageTransition } from 'src/app/shared/animations';
   animations: [pageTransition]
 })
 export class EventsComponent {
+  constructor(private router: Router) {
+  }
 
+  loadTest() {
+    this.router.navigate(['admin', 'events', { outlets: { test: ['testing'] } }]);
+  }
 }
