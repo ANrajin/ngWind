@@ -11,7 +11,7 @@ ngWind is a free to use minimal dashboard template designed and developed with A
 
 ## 🚀 Quick Start
 
-Make sure you have `node js` and `angular cli` installed your machine. Next the these steps - 
+Make sure you have `node js` and `angular cli` installed your machine. Next follow these steps - 
 
 1. Clone this repository.
 
