@@ -20,7 +20,7 @@ Make sure you have `node js` and `angular cli` installed your machine. Next foll
     npm install
     ```
 
-3. Installing the dependencies, execute the following command
+3. After Installing the dependencies, execute the following command
     ```
     ng serve --open
     
