@@ -1,0 +1,22 @@
+<nav aria-label="Breadcrumb" class="mb-4">
+  <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+    @for (item of items; track $index) {
+      <li class="inline-flex items-center">
+        @if (item.url && !item.isCurrent) {
+          <a [routerLink]="item.url" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600">
+            {{ item.label }}
+          </a>
+        } @else if (item.isCurrent) {
+          <span class="inline-flex items-center text-sm font-medium text-gray-400">
+            {{ item.label }}
+          </span>
+        }
+        @if ($index < items.length - 1) {
+          <svg class="w-3 h-3 mx-1 text-gray-400 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg>
+        }
+      </li>
+    }
+  </ol>
+</nav>
